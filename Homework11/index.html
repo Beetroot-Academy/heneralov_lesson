@@ -4,137 +4,115 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/1fed6140dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Form</title>
   </head>
   <body>
     <main>
-      <form class="create-account">
-        <div class="wrapper">
-          <h1 class="create-account__title">Create an Account</h1>
-          <div class="form-row create-account__row">
-            <div class="input short-input">
-              <label for="name-input" class="input__label short-input">
-                First Name
-              </label>
-              <input class="input__main" type="text" name="name-input" />
+      <section class="create-account-section">
+        <div class="wrapper create-account-section__wrapper">
+          <h1 class="title create-account-section__title">Create an Account</h1>
+          <form class="create-account">
+            <div class="flex-form">
+              <div class="form-row form-row--first-name">
+                <label
+                  for="first-name-input"
+                  class="subtitle create-account-section__subtitle"
+                >
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  name="first-name-input"
+                  id="first-name-input"
+                />
+              </div>
+              <div class="form-row form-row--last-name">
+                <label
+                  for="last-name-input"
+                  class="subtitle create-account-section__subtitle"
+                >
+                  Last Name
+                </label>
+                <input
+                  class="input__main"
+                  type="text"
+                  name="last-name-input"
+                  id="last-name-input"
+                />
+              </div>
+              <div class="form-row form-row--email">
+                <label
+                  for="email-input"
+                  class="subtitle create-account-section__subtitle"
+                >
+                  E-mail
+                </label>
+                <input type="email" name="email-input" id="email-input" />
+                <p class="comment">
+                  We'll never share your email with anyone else.
+                </p>
+              </div>
+              <div class="form-row form-row--gender">
+                <label class="subtitle radio radio__customization">
+                  Male
+                  <input type="radio" name="gender" value="male" />
+                  <span class="mark"></span>
+                </label>
+                <label class="subtitle radio radio__customization">
+                  Female
+                  <input type="radio" name="gender" value="female" />
+                  <span class="mark"></span>
+                </label>
+              </div>
+              <div class="form-row form-row--country">
+                <label
+                  for="country"
+                  class="subtitle create-account-section__subtitle"
+                >
+                  Country
+                </label>
+                <select name="country" id="country">
+                  <option value="Ukraine">Ukraine</option>
+                  <option value="USA">USA</option>
+                  <option value="Spain">Spain</option>
+                  <option value="China">China</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Poland">Poland</option>
+                  <option value="Netherlands">Netherlands</option>
+                </select>
+              </div>
+              <div class="form-row form-row--city">
+                <label
+                  for="city-input"
+                  class="subtitle create-account-section__subtitle"
+                >
+                  City
+                </label>
+                <input type="text" name="city-input" id="city-input" />
+              </div>
+              <div class="form-button">
+                <button class="submit-button" type="submit">Sign up</button>
+              </div>
             </div>
-            <div class="input short-input">
-              <label for="last-name-input" class="input__label">
-                Last Name
-              </label>
-              <input class="input__main" type="text" name="last-name-input" />
-            </div>
-          </div>
-          <div class="form-row create-account__row">
-            <div class="input long-input">
-              <label for="email-input" class="input__label"> E-mail </label>
-              <input class="input__main" type="email" name="email-input" />
-            </div>
-            <p>We'll never share your email with anyone else.</p>
-          </div>
-          <div class="form-row create-account__row">
-            <label class="radio">
-              Male
-              <input class="radio__main" type="radio" name="gender" />
-            </label>
-            <label class="radio">
-              Female
-              <input class="radio__main" type="radio" name="gender" />
-            </label>
-          </div>
-          <div class="form-row create-account__row">
-            <div class="input short-input">
-              <label for="country" class="input__label"> Country </label>
-              <select class="input__main" name="country">
-                <option value="Ukraine">Ukraine</option>
-                <option value="USA">USA</option>
-                <option value="Spain">Spain</option>
-                <option value="China">China</option>
-                <option value="Canada">Canada</option>
-                <option value="Poland">Poland</option>
-                <option value="Netherlands">Netherlands</option>
-              </select>
-            </div>
-            <div class="input short-input">
-              <label for="city-input" class="input__label"> City </label>
-              <input class="input__main" type="text" name="city-input" />
-            </div>
-          </div>
-          <div class="create-account__submit">
-            <button class="submit-button" type="submit">
-              Create an Account
-            </button>
-            <p class="terms create-account__terms">
-              By clicking the 'Sign Up' button, you confirm that you accept our
-              <a class="privacy__link" href="#">Terms of use</a>
-              and
-              <a class="privacy__link" href="#">Privacy Policy</a>
-            </p>
-            <div class="create-account__line"></div>
-            <span class="create-account__log-in">
-              Have an account?
-              <a href="#">Log In</a>
-            </span>
-          </div>
+          </form>
+          <p class="comment comment-border">
+            By clicking the 'Sign Up' button, you confirm that you accept our
+            <a class="link privacy__link" href="#">Terms of use</a>
+            and
+            <a class="link privacy__link" href="#">Privacy Policy</a>
+          </p>
+          <span class="log-in">
+            Have an account?
+            <a class="link log-in__link" href="#">Log In</a>
+          </span>
         </div>
-      </form>
-      <form class="profile">
-        <div class="wrapper">
-          <h1 class="profile__title">Profile</h1>
-          <div class="profile__photo-container">
-            <div class="profile__photo">
-              <img src="assets/images/Image.png" alt="user photo" />
-            </div>
-            <div class="profile__photo-input">
-              <input type="file" name="photo-input" />
-            </div>
-          </div>
-          <div class="form-row profile__row">
-            <div class="input short-input">
-              <label for="name-input" class="input__label short-input">
-                Name
-              </label>
-              <input class="input__main" type="text" name="name-input" />
-            </div>
-            <div class="input short-input">
-              <label for="email-input" class="input__label"> E-mail </label>
-              <input class="input__main" type="email" name="email-input" />
-            </div>
-          </div>
-          <div class="form-row create-account__row">
-            <div class="input short-input">
-              <label for="country" class="input__label"> Country </label>
-              <select class="input__main" name="country">
-                <option value="Ukraine">Ukraine</option>
-                <option value="USA">USA</option>
-                <option value="Spain">Spain</option>
-                <option value="China">China</option>
-                <option value="Canada">Canada</option>
-                <option value="Poland">Poland</option>
-                <option value="Netherlands">Netherlands</option>
-              </select>
-            </div>
-            <div class="input short-input">
-              <label for="city-input" class="input__label"> City </label>
-              <input class="input__main" type="text" name="city-input" />
-            </div>
-          </div>
-          <div class="form-row profile__row">
-            <div class="input short-input">
-              <label for="zip-code" class="input__label short-input">
-                Zip Code
-              </label>
-              <input class="input__main" type="text" name="zip-code" />
-            </div>
-            <div class="input short-input">
-              <label for="phone" class="input__label"> Phone Number </label>
-              <input class="input__main" type="tel" name="phone" />
-            </div>
-          </div>
-          <button class="submit-button" type="submit">Create Profile</button>
-        </div>
-      </form>
+      </section>
     </main>
   </body>
 </html>
