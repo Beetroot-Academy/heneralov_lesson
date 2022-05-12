@@ -32,10 +32,11 @@
     font-style: normal;
     font-display: swap;
 }
-.header-wrapper {
-    margin-left: 135px;
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 260px;
 }
-
 a {
     text-decoration: none;
 }
@@ -53,7 +54,7 @@ a {
     padding-right: 75px;
 }
 .flex-header {
-    margin-top: 20px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -64,21 +65,7 @@ a {
     line-height: 30px;
     color: #AAAAAB;
 }
-.header-logo-pink {
-    color: #F087B1;
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 30px;
-    margin-right: -3px;
-}
-.header-logo-grey {
-    color: #56597A;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 30px;
-}
+
 nav {
     margin-left: 600px;
 }
@@ -91,7 +78,7 @@ nav a:hover {
 }
 
 .header-icon {
-    margin-top: 7px;
+    padding-top: 7px;
 }
 .header-icon:hover {
     transition: 0.5s;
@@ -100,9 +87,9 @@ nav a:hover {
 main {
     position: absolute;
 }
+
 .first-section {
-    margin-left: 135px;
-    margin-top: 200px;
+    padding-left: 135px;
 }
 .first-section-text {
     width: 50%;
@@ -122,7 +109,7 @@ main {
     line-height: 40px;
 }
 .first-section-text h3 {
-    margin-top: 20px;
+    padding-top: 20px;
     color: #56597A;
     font-family: 'Circular Std';
     font-style: normal;
@@ -132,7 +119,8 @@ main {
 }
 .first-section-text p {
     width: 80%;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 400;
@@ -144,7 +132,6 @@ main {
     display: inline-block;
     font-family: 'Circular Std';
     font-style: normal;
-    margin-top: 50px;
     width: 210px;
     font-weight: 500;
     font-size: 20px;
@@ -169,8 +156,8 @@ main {
     width: 850px;
     display: block;
     position: absolute;
-    top: -30px;
-    right: -50px;
+    top: -260px;
+    right: -100px;
     z-index: 1;
 }
 
@@ -193,7 +180,7 @@ main {
 .section-title {
     font-family: Circular;
     font-style: normal;
-    margin-top: 20px;
+    padding-top: 20px;
     font-weight: 500;
     font-size: 28px;
     line-height: 40px;
@@ -210,19 +197,16 @@ main {
     line-height: 72px;
     color: #56597A;
     text-align: center;
+    padding-bottom: 60px;
 
 }
 .section-content {
-    margin-left: 135px;
-    margin-right: 135px;
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
 }
 .section-item  {
-    width: 270px;
+    margin-left: 50px;
     text-align: center;
-    height:307px;
     background-color: #FFF1F9;
     border-radius: 8px;
 }
@@ -261,8 +245,7 @@ main {
 }
 .active {
     background-color: #F78CB6;
-    border-radius: 8px;
-    height: 344px;
+    border-radius: 8px;;
 }
 .active a {
     visibility: visible;
@@ -283,18 +266,13 @@ main {
 }
 .icon {
     color: #FC85B4;
-    margin-top: 55px;
-    margin-bottom: 40px;
+    padding-top: 55px;
+    padding-bottom: 40px;
     font-size: 40px;
+}
 
-}
-.wrapper {
-    margin-left: 135px;
-    margin-top: 260px;
-    display: flex;
-}
 .section-header {
-    margin-top: 10px;
+    padding-top: 10px;
     color: #F78CB6;
     font-family: 'Circular Std';
     font-style: normal;
@@ -303,7 +281,7 @@ main {
     line-height: 40px;
 }
 .section-subheader {
-    margin-top: 20px;
+    padding-top: 20px;
     width: 80%;
     color: #56597A;
     font-family: 'Circular Std';
@@ -314,7 +292,8 @@ main {
 }
 .section-text {
     width: 65%;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 35px;
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 400;
@@ -326,7 +305,6 @@ main {
     display: inline-block;
     font-family: 'Circular Std';
     font-style: normal;
-    margin-top: 35px;
     width: 210px;
     font-weight: 500;
     font-size: 20px;
@@ -344,20 +322,27 @@ main {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-text-stroke: 0.5px black
 }
-.teamwork-section__content__section-text {
-    width: 70%;
+.design-section__subheader {
+    width: 85%;
 }
-.testimonial-section {
-    display: block;
+.design-section__text {
+    width: 80%;
 }
-.testimonial-section__content__section-subheader {
-    width: 70%;
+.teamwork-section__subheader {
+    width:85%;
 }
-.testimonial-section__content__section-text {
-    width: 50%;
+.teamwork-section__text {
+    width: 80%;
+}
+
+.testimonial-section__subheader {
+    width: 80%;
+}
+.testimonial-section__text {
+    width: 55%;
 }
 .testimonial-section__client__name {
-    margin-top: 35px;
+    padding-top: 35px;
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 700;
@@ -392,4 +377,16 @@ main {
 .testimonial-section__client__block__icons__left-arrow:hover {
     color: #F78CB6;
     transition: 0.5s;
+}
+.first-section-wrapper {
+    padding-bottom: 0;
+}
+.design-section__wrapper {
+    display: flex;
+}
+.teamwork-section__wrapper {
+    display: flex;
+}
+.testimonial-section__wrapper {
+    display: flex;
 }
