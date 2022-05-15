@@ -1,0 +1,203 @@
+@mixin font ($size){
+    font-size: $size;
+}
+$black: #262626;
+$white: white;
+$orange: #ff6033;
+$blue: #70bfff;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: block;
+
+}
+use{
+    max-width: 100%;
+}
+li{
+    display: block;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+.text{
+    @include font (17px);
+    font-weight: 300;
+}
+.title{
+    @include font(90px)
+
+}
+.btn{
+    display: block;
+    width: 200px;
+    padding: 15px;
+    border: 2px solid transparent;
+    @include font (20px);
+    text-transform: uppercase;
+    color:$white;
+    box-sizing: border-box;
+    
+}
+
+.header{
+    padding: 25px 0 25px 0;
+    width: 100%;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.logo{
+    &__img{
+        width: 127px;
+        height: 52px;
+    }
+}
+.nav{
+    &__list{
+        display: flex;
+    }
+    &__item{
+        margin-left: 35px;
+        border-top: 3px solid transparent;
+        padding: 5px;
+        transition: 1s;
+        text-transform: uppercase;
+    }
+    &__item:hover{
+        border-top: 3px solid $orange;
+    }
+    &__link{
+        @include font (16px);
+        font-weight: 600;
+    }
+
+}
+.hero{
+    padding-top: 100px;
+    height:800px;
+    background-image: url(/assets/images/hero.png);
+    background-size: cover;
+    background-position: center;
+    &__wrapper{
+        position: relative;
+        height: 100%;
+    }
+    &__text{
+        width: 30%;
+        margin-bottom: 35px;
+        
+        
+    }
+    &__title{
+        padding-top: 200px;
+        margin-bottom: 35px;
+        @include font(60px)
+    }
+    &__btn{
+        background-color: $orange;
+        
+
+    }
+    &__scroll{
+
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        padding-bottom: 50px;
+        &__img{
+            width: 24px;
+            height: 40px;
+        }
+    }
+
+}
+.services{
+    background-color:$blue;
+    position: relative;
+    &__img {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            position: relative;
+            border-left: 1px solid black;
+        }
+    &::after {
+            content: "";
+            background-image: url(/assets/images/tomato.png);
+            background-size: cover;
+            height:527px;
+            width: 462px;
+            position: absolute;
+            top:15%;
+            right: 10%;
+        }
+    &__wrapper{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 790px;
+        justify-content: space-between;
+        
+    }
+    
+    &__title{
+        order: 2;
+        display:block;
+        z-index: 1;
+        color: $white;
+        font-weight: 600;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 20px;
+
+        &__item{
+            position: relative;  
+            background-color: $white;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &:hover{
+                cursor: pointer;
+                background-color: yellow;
+                transition: 0.5s;
+            }
+            &:hover .services__link{
+                color: blue;
+                transition: 1s;
+            }  
+            
+        }
+    }
+    &__link{
+        box-sizing: border-box;
+        width: 300px;
+        @include font (20px);
+        text-align: center;
+    }
+}
+
+.services__img__icon {
+     width: 55px;
+     height: 55px;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     transform: translate(-50%, -50%);
+ }
