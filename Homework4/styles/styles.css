@@ -1,0 +1,76 @@
+* {
+  transition: all 0.1s ease-in;
+  box-sizing: border-box;
+}
+header {
+  background-color: #4a4f56;
+  margin-bottom: 20px;
+}
+.header-text {
+  text-align: center;
+  color: #ff8984;
+  padding: 20px;
+}
+h1 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 16px;
+}
+.container {
+  width: 793px;
+  margin: 0 auto;
+  background-color: #3b3f45;
+}
+.list-container {
+  width: 534px;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.odd {
+  background-color: #88839e;
+}
+.even {
+  background-color: #7a7593;
+}
+li {
+  padding: 12px 0px 12px 16px;
+  font-size: 18px;
+  color: white;
+}
+li:hover {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  background-color: #625e77;
+}
+li span {
+  font-size: 11px;
+}
+.btn {
+  text-align: center;
+}
+button {
+  margin: 45px auto;
+  width: 534px;
+  background-color: #4a4f56;
+  padding: 12px 0px;
+  border: none;
+  color: #ff8984;
+}
+button span::after {
+  content: ":)";
+  padding-left: 5px;
+}
+button:active {
+  background-color: white;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+.even.line-through {
+  text-decoration: line-through;
+}
