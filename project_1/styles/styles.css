@@ -321,6 +321,7 @@ a:hover {
     flex-direction: row;
     width: 100%;
     padding-top: 0px;
+    padding-right: 0px;
   }
 }
 .first-section__img {
@@ -328,6 +329,11 @@ a:hover {
 }
 .first-section__img:last-child {
   padding-left: 40px;
+}
+@media screen and (max-width: 768px) {
+  .first-section__img:last-child {
+    padding-left: 0px;
+  }
 }
 .first-section__bottom-block {
   padding-top: 120px;
