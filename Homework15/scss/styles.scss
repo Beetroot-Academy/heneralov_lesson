@@ -81,6 +81,9 @@ img {
     line-height: 40px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-text-stroke: 0.5px black;
+    @media screen and (max-width:$tablet){ 
+        text-align: center;
+}
 }
 
 .header {
@@ -117,10 +120,10 @@ img {
 }
 .burger {
     height: 40px;
-    display: flex;
+    display: none;
     flex-direction: column;
     .bar {
-        display: block;
+        display:block;
         width: 30px;
         height: 2px;
         margin: 5px auto;
@@ -339,7 +342,13 @@ img {
         @include flex-row;
 
     }
-
+    &__button {
+        @media screen and (max-width:$tablet){ 
+            display: block;
+            margin: 0 auto;
+            
+        }
+    }
     &__img {
         width: 50%;
         @media screen and (max-width: $tablet) {
@@ -377,7 +386,13 @@ img {
         gap: 100px;
         @include flex-row;
     }
-
+    &__button {
+        @media screen and (max-width:$tablet){ 
+            display: block;
+            margin: 0 auto;
+            
+        }
+    }
     &__content {
         width: 50%;
         @media screen and (max-width: $tablet) {
@@ -416,6 +431,9 @@ img {
     &__wrapper {
         @include flex-row;
         gap: 100px;
+        @media screen and (max-width: $tablet) {
+            gap: 0;
+        }
     }
 
     &__img {
@@ -423,7 +441,6 @@ img {
         @media screen and (max-width: $tablet) {
             width: 100%;
             text-align: center;
-            order: 2;
         }
     }
 
