@@ -1,0 +1,448 @@
+$desktop:1200px;
+$small-desktop:992px;
+$tablet:768px;
+$mobile:576px;
+
+@mixin flex-row {
+    display:flex;
+    flex-direction: row;
+    flex: 1;
+    @media screen and (max-width: $tablet) {
+        flex-direction: column;
+}
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 15%;
+}
+.title {
+    color: #F78CB6;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+}
+.subtitle {
+    padding-top: 20px;
+    color: #56597A;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+}
+.text {
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #919299;
+}
+.button {
+    display: inline-block;
+    font-family: 'Circular Std';
+    font-style: normal;
+    width: 210px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding: 18px 22px;
+    background: #F78BB6;
+    border-radius: 4px;
+    border-color: #F78BB6;
+    &:hover {
+        background-color: pink;
+        color: blueviolet;
+        transition: 0.5s;
+    }
+}
+.button-icon {
+    margin-left: 20px;
+}
+.shaded-title {
+    color: #F78CB6;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke: 0.5px black;
+}
+
+.header {
+
+    &__bg {
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        top: 0%;
+        z-index: 1;
+        background-color:#FFFFFF; 
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: fixed; 
+        z-index: 1;
+        padding-top: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #AAAAAB;
+    }
+
+    &__icon {
+        padding-top: 15px;
+    }
+    &__icon:hover {
+        transition: 0.5s;
+        color: #56597A;
+    }
+}
+
+.nav {
+    padding-top: 8px;
+    margin-left: 400px;
+
+    &__item {
+        display: inline-block;
+        padding-right: 75px;
+    }
+
+    &__link {
+        color: #AAAAAB;
+    }
+    &__link:hover {
+        transition: 0.5s;
+        color: #56597A;
+    }
+}
+
+.first-section {
+ margin-bottom:-15%;
+    &__wrapper {
+        @include flex-row;
+    }
+
+    &__content {
+        width: 50%; 
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+    &__img {  
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+
+    }
+
+    &__title::before {
+        content: '__';
+        width: 36px;
+        height: 3px;
+        font-size: 30px;
+    }
+}
+.first-section::after {
+    content: '';
+    background-size: cover;
+    background-image: url(../assets/images/bg_vector.png);
+    height: 100%;
+    width: 56%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 44%;
+    z-index: 1;
+}
+.test-sticky {
+    position: sticky;
+    top:75%;
+}
+
+
+
+.services-section {
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+        padding-bottom: 60px;
+    }
+    &--flex {
+        @include flex-row;
+    }
+}
+
+.item {
+    margin-left: 3%;
+    text-align: center;
+    background-color: #FFF1F9;
+    border-radius: 8px;
+    &--active {
+        background-color: #F78CB6;
+        border-radius: 8px;
+    }
+    @media screen and (max-width: $tablet) {
+        margin-left: 0px;
+        margin-bottom: 3%;
+    }
+    &__icon {
+        color: #FC85B4;
+        padding-top: 55px;
+        padding-bottom: 40px;
+        font-size: 40px;
+    &--active {
+        color: #FFFFFF;
+    }
+    }
+
+    &__title {
+        font-family: Circular;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 72px;
+        color: #56597A;
+        &--active {
+            color: #FFFFFF;
+        }
+    }
+
+    &__text {
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #919299;
+        line-height: 24px;
+        padding-left: 23px;
+        padding-right: 23px;
+        margin-bottom: 20px;
+    &--active {
+        color: #FFFFFF;
+    }
+    }
+
+    &__link {
+        font-family: Circular;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        visibility: hidden;
+    &--active {
+        visibility: visible;
+        color: #FFFFFF;
+    }
+    
+    }
+    &__link::after {
+        content:'▶' ;
+        margin-left: 10px;
+        font-size: 12px;
+    }
+}
+.item:hover {
+    background-color: yellow;
+    transform: rotateY(360deg);
+    cursor: pointer;
+    transition: 1s;
+}
+.services-section::before {
+    content: '';
+    position: sticky;
+    height: 300px;
+    width: 10%;
+    background-size: cover;
+    background-image: url(../assets/images/bg_bloob_vector.png);
+    display: block;
+    top: 50px;
+    left: 0px;
+    z-index: 1;
+}
+.design-section {
+
+    &__wrapper {
+        gap: 100px;
+        @include flex-row;
+
+    }
+
+    &__img {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            
+        }
+    }
+
+    &__content {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    &__subtitle {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+    }
+    }
+
+    &__text {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+            margin-left: 10%;
+    }
+    }
+
+}
+
+
+.teamwork-section {
+
+    &__wrapper {
+        gap: 100px;
+        @include flex-row;
+    }
+
+    &__content {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+    &__img {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;    
+        }
+    }
+    &__title {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+    }
+    }
+
+    &__subtitle {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+    }
+    }
+
+    &__text {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+            margin-left: 10%;
+    }
+    }
+
+    
+}
+.testimonial-section {
+
+    &__wrapper {
+        @include flex-row;
+        gap: 100px;
+    }
+
+    &__img {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            text-align: center;
+            order: 2;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+    }
+    }
+
+    &__subtitle {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+    }
+    }
+
+    &__text {
+        @media screen and (max-width:$tablet){ 
+            text-align: center;
+            margin-left: 10%;
+    }
+    }
+
+    &__name {
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+        color: #56597A;
+    }
+
+    &__info-block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__location {
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        color: #ABABAB;
+    }
+
+    &__icons {
+        color:#56597A99;
+    }
+
+    &__left-arrow {
+    &:hover {
+        color: #F78CB6;
+        transition: 0.5s;
+
+    }
+    }
+
+    &__right-arrow {
+        margin-left: 7px;
+    &:hover {
+        color: #F78CB6;
+        transition: 0.5s;
+    }
+    }
+}
