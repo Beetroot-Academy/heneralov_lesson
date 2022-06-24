@@ -86,7 +86,8 @@ function changeColor() {
       return;
     } else {
       greenLight.classList.remove("green__active");
-      counter = 0;
+      redLight.classList.add("red__active");
+      counter = 1;
       return;
     }
   });
