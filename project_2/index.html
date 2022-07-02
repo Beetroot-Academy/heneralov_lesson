@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monticello</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@0;1&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css,npm/@splidejs/splide@4.0.7/dist/css/splide-core.min.css,npm/@splidejs/splide@4.0.7/dist/css/themes/splide-default.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1fed6140dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"
+      defer
+    ></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="header" id="aboutus">
+      <div class="container header__container">
+        <div class="header__flex">
+          <div class="header__logo">
+            <img src="assets/images/Logo.png" alt="logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link active" href="#aboutus">About us</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#projects">Projects</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#news">News</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="social header__social">
+            <div class="fb header__fb">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-facebook-f social-icon"></span>
+              </a>
+            </div>
+            <div class="twitter header__twitter">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-twitter social-icon"></span>
+              </a>
+            </div>
+            <div class="instagram header__instagram">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-instagram social-icon"></span> />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="splide" role="group" id="header-splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="header__content">
+                  <h1 class="header__title">SIMPLE & MODERN</h1>
+                  <h2 class="header__subtitle">
+                    WE MAKE THE WORLD BEAUTIFUL EVERYDAY
+                  </h2>
+                  <div class="scroll-img">
+                    <a href="#projects">
+                      <span class="fa-solid fa-angle-down scroll-icon"></span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="header__content">
+                  <h1 class="header__title">COOL TITLE</h1>
+                  <h2 class="header__subtitle">COOL SUBTITLE</h2>
+                  <div class="scroll-img">
+                    <a href="#projects">
+                      <span class="fa-solid fa-angle-down scroll-icon"></span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="header__content">
+                  <h1 class="header__title">EVEN COOLER TITLE</h1>
+                  <h2 class="header__subtitle">EVEN COOLER SUBTITLE</h2>
+                  <div class="scroll-img">
+                    <a href="#projects">
+                      <span class="fa-solid fa-angle-down scroll-icon"></span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="first-section" id="projects">
+        <div class="container first-section__container">
+          <p class="line">___________</p>
+          <h2 class="section-title first-section__section-title">WHAT WE DO</h2>
+          <div class="section-content first-section__section-content">
+            <div class="img-container first-section__img-container">
+              <div class="rectangle-img">
+                <img src="assets/images/firstimage.png" alt="ball" />
+              </div>
+            </div>
+            <div class="content first-section__content">
+              <h3 class="title first-section__title">ONE WORLD</h3>
+              <h3 class="subtitle first-section__subtitle">TRADE CENTER</h3>
+              <p class="text first-section__text">
+                Increasing prosperity in our lives can be accomplished by having
+                the right frame of mind. The truth is, our thoughts are very
+                powerful.
+              </p>
+              <button class="btn first-section__btn">MORE DETAILS</button>
+              <p class="geo">
+                <span class="fa-solid fa-location-dot"></span> New York City,
+                United States - 1776 feet
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="second-section">
+        <div class="container second-section__container">
+          <div class="content second-section__content">
+            <h3 class="title second-section__title">INTERNATIONAL</h3>
+            <h3 class="subtitle second-section__subtitle">COMMERCE CENTRE</h3>
+            <p class="text second-section__text">
+              Successful businesses have many things in common, today we'll look
+              at the big 'R' of recognition and how a digital advertising
+              network may help.
+            </p>
+            <button class="btn second-section__btn">MORE DETAILS</button>
+            <p class="geo">
+              <span class="fa-solid fa-location-dot"></span> Hong Kong - 1588
+              feet
+            </p>
+          </div>
+          <div class="img-container second-section__img-container">
+            <img src="assets/images/secondimage.png" alt="building" />
+          </div>
+        </div>
+      </section>
+      <section class="news-section" id="news">
+        <div class="container news-section__container">
+          <p class="news-line">___________</p>
+          <h2 class="section-title news-section__section-title">LATEST NEWS</h2>
+          <div class="splide news-slider" role="group" id="news-splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/firstblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                      </h3>
+                      <p class="news-block__text">
+                        Free directories: directories are perfect for customers
+                        that are searching for...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/alja.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">ALJA BRUN</h4>
+                          <p class="user-year">20 Jan 2020</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/secondblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        EFFECTIVE ADVERTISING POINTERS.
+                      </h3>
+                      <p class="news-block__text">
+                        Having a home based business is a wonderful asset to
+                        your life...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/dominic.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">DOMINIC FREEMAN</h4>
+                          <p class="user-year">13 Dec 2019</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/thirdblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        HYPNOTIZE YOURSELF INTO THE GHOST.
+                      </h3>
+                      <p class="news-block__text">
+                        There are many things that are important to catalog
+                        design...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/alice.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">ALICE WARD</h4>
+                          <p class="user-year">30 Nov 2019</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/firstblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                      </h3>
+                      <p class="news-block__text">
+                        Free directories: directories are perfect for customers
+                        that are searching for...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/alja.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">ALJA BRUN</h4>
+                          <p class="user-year">20 Jan 2020</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/firstblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                      </h3>
+                      <p class="news-block__text">
+                        Free directories: directories are perfect for customers
+                        that are searching for...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/alja.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">ALJA BRUN</h4>
+                          <p class="user-year">20 Jan 2020</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/secondblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        EFFECTIVE ADVERTISING POINTERS.
+                      </h3>
+                      <p class="news-block__text">
+                        Having a home based business is a wonderful asset to
+                        your life...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/dominic.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">DOMINIC FREEMAN</h4>
+                          <p class="user-year">13 Dec 2019</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="news-block">
+                    <div class="news-block__content">
+                      <div class="img-container news-block__image-container">
+                        <img
+                          src="assets/images/firstblock.png"
+                          alt="something"
+                        />
+                      </div>
+                      <h3 class="news-block__title">
+                        SEE THE UNMATCHED BEAUTY OF THE GREAT.
+                      </h3>
+                      <p class="news-block__text">
+                        Free directories: directories are perfect for customers
+                        that are searching for...
+                      </p>
+                      <div class="user-block">
+                        <div class="user-image">
+                          <img
+                            src="assets/images/alja.png"
+                            class="round"
+                            alt="userphoto"
+                          />
+                        </div>
+                        <div class="user-info">
+                          <h4 class="user-name">ALJA BRUN</h4>
+                          <p class="user-year">20 Jan 2020</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows splide__arrows--ltr">
+              <button class="splide__arrow splide__arrow--prev" type="button">
+                <span class="fa-solid fa-chevron-left"></span>
+              </button>
+              <button class="splide__arrow splide__arrow--next" type="button">
+                <span class="fa-solid fa-chevron-right"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-section">
+        <div class="container gallery-section__container">
+          <p class="gallery-line">___________</p>
+          <h2 class="section-title gallery-section__section-title">GALLERY</h2>
+          <div class="images-block">
+            <div class="big-image">
+              <img
+                src="assets/images/galleryone.png"
+                alt="building"
+                class="gal-img"
+                id="firstimg"
+              />
+            </div>
+            <div class="first-column">
+              <div class="gal-container">
+                <img
+                  src="assets/images/gallerytwo.png"
+                  alt="another building"
+                  class="gal-img"
+                  id="secondimg"
+                />
+              </div>
+              <div class="gal-container">
+                <img
+                  src="assets/images/gallerythree.png"
+                  alt="another building"
+                  class="gal-img"
+                  id="thirdimg"
+                />
+              </div>
+            </div>
+            <div class="second-column">
+              <div class="gal-container">
+                <img
+                  src="assets/images/galleryfour.png"
+                  alt="another building"
+                  class="gal-img"
+                  id="fourthimg"
+                />
+              </div>
+              <div class="gal-container">
+                <img
+                  src="assets/images/galleryfive.png"
+                  alt="another building"
+                  class="gal-img"
+                  id="fifthimg"
+                />
+              </div>
+            </div>
+          </div>
+          <button class="btn gallery-section__btn">SEE MORE</button>
+        </div>
+      </section>
+      <section class="contact-section" id="contact">
+        <div class="contact-section__map" id="map"></div>
+        <div class="container contact-section__container">
+          <p class="contact-line">___________</p>
+          <h2 class="section-title contact-section__section-title">
+            GET IN TOUCH
+          </h2>
+          <div class="content contact-section__content">
+            <div class="contacts contact-section__contacts">
+              <ul class="contacts-list">
+                <li class="contacts-item">
+                  <span class="fa-solid fa-location-dot"></span>
+                  <a href="#">91 Nolan Extensions Suite 670</a>
+                </li>
+                <li class="contacts-item">
+                  <span class="fa-solid fa-phone"></span>
+                  <a href="#">+001 356-868-2454</a>
+                </li>
+                <li class="contacts-item">
+                  <span class="fa-solid fa-envelope-open"></span>
+                  <a href="#">montichello@service.com</a>
+                </li>
+                <li class="contacts-item">
+                  <span class="fa-regular fa-clock"></span>
+                  <a href="#">From 07:05AM to 19:30PM</a>
+                </li>
+              </ul>
+            </div>
+            <form class="form">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                required
+                class="form__nameinput"
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+                class="form__mailinput"
+              />
+              <button class="btn form__btn" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__flex">
+          <div class="footer__logo">
+            <img src="assets/images/Logo.png" alt="logo" />
+          </div>
+          <div class="social footer__social">
+            <div class="fb footer__fb">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-facebook-f social-icon"></span>
+              </a>
+            </div>
+            <div class="twitter footer__twitter">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-twitter social-icon"></span>
+              </a>
+            </div>
+            <div class="instagram footer__instagram">
+              <a href="#" class="social__link">
+                <span class="fa-brands fa-instagram social-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="footer-text">Copyrights © 2020 Montichello</p>
+      </div>
+    </footer>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHDAtGmTdNG77i9CPthJ7k-n4_SrUQMe4&callback=initMap"
+    ></script>
+  </body>
+</html>
