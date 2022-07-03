@@ -457,37 +457,13 @@ a {
   gap: 10px;
 }
 
-.gallery-div {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  z-index: 1;
-}
-
-/*
-#firstimg:hover {
-    zoom: 125%;
-}
-#secondimg:hover {
-    zoom: 125%;
-}
-#thirdimg:hover {
-    zoom: 125%;
-}
-#fourthimg:hover {
-    zoom: 125%;
-}
-#fifthimg:hover {
-    zoom: 125%;
-}
-*/
 .big-image::before {
   content: url(/assets/images/zoomicon.svg);
   position: absolute;
   z-index: 1;
   padding-left: 16%;
   padding-top: 12%;
+  visibility: hidden;
 }
 
 .test {
@@ -616,5 +592,9 @@ input:focus {
 .fa-facebook-f {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.zoom {
+  zoom: 125%;
 }
 /*# sourceMappingURL=styles.css.map */

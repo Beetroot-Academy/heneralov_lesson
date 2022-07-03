@@ -26,15 +26,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
     splide.mount();
   } );
 
-/*  function gallery () {
-let imagesList = document.querySelector(".images-block");
- = document.getElementById("#secondimg");
-imagesList.addEventListener("click", function() {
-  image.classList.toggle("test");
-});
+ 
 
-}
-gallery()  */
+
+
 
 const showMap = document.getElementById('map');
 function initMap() {
@@ -58,7 +53,13 @@ function initMap() {
 
 window.initMap = initMap;
 
+
+
+
 document.documentElement.style.scrollBehavior = "smooth";
+
+
+
 
 let submitBtn = document.querySelector(".form__btn");
 let formTest = document.querySelector(".form");
