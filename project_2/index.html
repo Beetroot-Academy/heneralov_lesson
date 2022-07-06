@@ -76,36 +76,26 @@
                   <h2 class="header__subtitle">
                     WE MAKE THE WORLD BEAUTIFUL EVERYDAY
                   </h2>
-                  <div class="scroll-img">
-                    <a href="#projects">
-                      <span class="fa-solid fa-angle-down scroll-icon"></span>
-                    </a>
-                  </div>
                 </div>
               </li>
               <li class="splide__slide">
                 <div class="header__content">
                   <h1 class="header__title">COOL TITLE</h1>
                   <h2 class="header__subtitle">COOL SUBTITLE</h2>
-                  <div class="scroll-img">
-                    <a href="#projects">
-                      <span class="fa-solid fa-angle-down scroll-icon"></span>
-                    </a>
-                  </div>
                 </div>
               </li>
               <li class="splide__slide">
                 <div class="header__content">
                   <h1 class="header__title">EVEN COOLER TITLE</h1>
                   <h2 class="header__subtitle">EVEN COOLER SUBTITLE</h2>
-                  <div class="scroll-img">
-                    <a href="#projects">
-                      <span class="fa-solid fa-angle-down scroll-icon"></span>
-                    </a>
-                  </div>
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="scroll-img">
+            <a href="#projects">
+              <span class="fa-solid fa-angle-down scroll-icon"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -113,7 +103,6 @@
     <main>
       <section class="first-section" id="projects">
         <div class="container first-section__container">
-          <p class="line">___________</p>
           <h2 class="section-title first-section__section-title">WHAT WE DO</h2>
           <div class="section-content first-section__section-content">
             <div class="img-container first-section__img-container">
@@ -161,7 +150,6 @@
       </section>
       <section class="news-section" id="news">
         <div class="container news-section__container">
-          <p class="news-line">___________</p>
           <h2 class="section-title news-section__section-title">LATEST NEWS</h2>
           <div class="splide news-slider" role="group" id="news-splide">
             <div class="splide__track">
@@ -405,61 +393,72 @@
       </section>
       <section class="gallery-section">
         <div class="container gallery-section__container">
-          <p class="gallery-line">___________</p>
           <h2 class="section-title gallery-section__section-title">GALLERY</h2>
           <div class="images-block">
-            <div class="big-image">
-              <img
-                src="assets/images/galleryone.png"
-                alt="building"
-                class="gal-img"
-                id="firstimg"
-              />
+            <div class="big-image gal-img" id="0">
+              <img src="assets/images/galleryone.png" alt="building" />
             </div>
             <div class="first-column">
-              <div class="gal-container">
+              <div class="gal-img" id="1">
                 <img
                   src="assets/images/gallerytwo.png"
                   alt="another building"
-                  class="gal-img"
-                  id="secondimg"
                 />
               </div>
-              <div class="gal-container">
+              <div class="gal-img" id="2">
                 <img
                   src="assets/images/gallerythree.png"
                   alt="another building"
-                  class="gal-img"
-                  id="thirdimg"
                 />
               </div>
             </div>
             <div class="second-column">
-              <div class="gal-container">
+              <div class="gal-img" id="3">
                 <img
                   src="assets/images/galleryfour.png"
                   alt="another building"
-                  class="gal-img"
-                  id="fourthimg"
                 />
               </div>
-              <div class="gal-container">
+              <div class="gal-img" id="4">
                 <img
                   src="assets/images/galleryfive.png"
                   alt="another building"
-                  class="gal-img"
-                  id="fifthimg"
                 />
               </div>
             </div>
           </div>
           <button class="btn gallery-section__btn">SEE MORE</button>
+          <div class="modal">
+            <div class="modal__container">
+              <span class="modal__icon fa-solid fa-xmark"></span>
+              <div class="splide" id="gal-splide" role="group">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img src="assets/images/galleryone.png" alt="pic" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="assets/images/gallerytwo.png" alt="pic" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="assets/images/gallerythree.png" alt="pic" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="assets/images/galleryfour.png" alt="pic" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="assets/images/galleryfive.png" alt="pic" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="contact-section" id="contact">
         <div class="contact-section__map" id="map"></div>
         <div class="container contact-section__container">
-          <p class="contact-line">___________</p>
           <h2 class="section-title contact-section__section-title">
             GET IN TOUCH
           </h2>

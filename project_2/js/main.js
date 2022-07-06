@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
         autoplay: true,
         interval: 2500,
         paginationDirection: 'ttb',
-        height: '100vh',
+        height: '70vh',
         pauseOnHover: false,
     } );
     splide.mount();
@@ -73,3 +73,36 @@ submitBtn.addEventListener("click" , function() {
   alert("Your name: " + getName);
   alert("Your email: " + getMail);
 });
+
+let body = document.querySelector("body");
+let image = document.querySelectorAll('.gal-img');
+let num;
+let galSplide;
+let chooseEl;
+image.forEach((e) => {
+  e.addEventListener('click', openModal);
+  function openModal() {
+    num = Number(e.id);
+    chooseEl = document.querySelector(".modal");
+    chooseEl.classList.add('active');
+    galSplide = new Splide( '#gal-splide', {
+      type: 'loop',
+      start: num,
+      height: '75vh',
+      width: '100vh',
+      autowidth: true,
+  } );
+  galSplide.mount();
+}
+  
+});
+
+
+let icon = document.querySelector(".modal__icon")
+icon.addEventListener('click', close);
+function close () {
+  chooseEl = document.querySelector(".modal");
+  chooseEl.classList.remove('active');
+  galSplide.destroy();
+
+}

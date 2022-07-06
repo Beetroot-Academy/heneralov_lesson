@@ -71,13 +71,14 @@ a {
     &__list {
         display: flex;
         flex-direction: row;
+        gap: 70px;
+        padding-left: 70px;
     }
 
     &__item {
-        padding-left: 75px;
         padding-top: 15px;
         &:last-child {
-            padding-right: 100px;
+            padding-right: 70px;
         }
     }
     
@@ -122,7 +123,6 @@ a {
 
 
 .scroll-img {
-    padding-top: 230px;
     text-align: center;
     padding-bottom: 50px;
     
@@ -462,12 +462,6 @@ a {
 .container {
     padding-bottom: 100px;
 }
-.gallery-line {
-    text-align: center;
-    color: $textcolor;
-    padding-top: 150px;
-    padding-bottom: 30px;
-}
 
 .images-block {
     padding-bottom: 60px;
@@ -489,12 +483,10 @@ a {
 
 
 .big-image::before {
-    content: url(/assets/images/zoomicon.svg);
+    content: url(../assets/images/zoomicon.svg);
     position: absolute;
-    z-index: 1;
     padding-left: 16%;
     padding-top: 12%;
-    visibility: hidden;
 }
 
 .test {
@@ -511,12 +503,14 @@ a {
    
 
     &__container {
+        padding-left: 60px;
+        padding-right: 60px;
+        max-width: 650px;
+        margin: 0 auto;
+        background-color: $white;
         position: absolute;
-        bottom: -25vh;
-		right: 25%;
-        width: 50%;
-        z-index: 1;
-        
+        left: 50%;
+        transform: translate(-50%, -60%);
         background-color: $white;
     }
 
@@ -533,27 +527,21 @@ a {
     &__content {
         display: flex;
         flex-direction: row;
-        gap: 120px;
+        justify-content: space-between;
     }
 
     &__contacts {
         display: flex;
         flex-direction: column;
         padding-top: 40px;
-        padding-left: 110px;
     }
 }
 
-.contact-line {
-    text-align: center;
-    color: $textcolor;
-    padding-top: 60px;
-    padding-bottom: 30px;
-}
 
 
 .contacts-item {
     padding-bottom: 30px;
+    font-size: 18px;
     
 }
 .contacts-item a {
@@ -567,12 +555,10 @@ a {
 .form {
     display: flex;
     flex-direction: column;
-    padding-right: 110px;
     padding-top: 20px;
-    align-items: flex-start;
     justify-content: space-between;
     &__nameinput {
-        max-width: 220px;
+        width: 310px;
         padding-top: 15px;
         padding-bottom: 15px;
         border-top: none;
@@ -582,7 +568,7 @@ a {
     }
 
     &__mailinput {
-        max-width: 220px;
+        width: 310px;
         padding-top: 15px;
         padding-bottom: 15px;
         border-top: none;
@@ -593,7 +579,7 @@ a {
 
     &__btn {
         width: 70%;
-        margin-left: 60px;
+        margin-left: 90px;
     }
 }
 input:focus {
@@ -630,4 +616,95 @@ input:focus {
 }
 .zoom {
     zoom: 125%;
+}
+.contact-section__section-title {
+    position: relative;
+    padding-top: 90px;
+}
+.contact-section__section-title::before {
+    position: absolute;
+    top: 60px;
+    right: 50%;
+    content: "";
+    width: 100px;
+    border-top: 1px solid $textcolor;
+    transform: translateX(50%);
+}
+.first-section__section-title {
+    position: relative;
+    padding-top: 130px;
+}
+.first-section__section-title::before {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+    content: "";
+    width: 100px;
+    border-top: 1px solid $textcolor;
+    transform: translateX(50%);
+}
+.news-section__section-title {
+    position: relative;
+    padding-top: 150px;
+}
+.news-section__section-title::before {
+    position: absolute;
+    top: 120px;
+    right: 50%;
+    content: "";
+    width: 100px;
+    border-top: 1px solid $white;
+    transform: translateX(50%);
+}
+.gallery-section__section-title {
+    position: relative;
+    padding-top: 180px;
+}
+.gallery-section__section-title::before {
+    position: absolute;
+    top: 150px;
+    right: 50%;
+    content: "";
+    width: 100px;
+    border-top: 1px solid $textcolor;
+    transform: translateX(50%);
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: none;
+    background-color: whitesmoke;
+    z-index: 1;
+    &__container {
+        width: 50%;
+        height: 75%;
+        padding-top: 30px;
+        padding-right: 25px;
+        padding-bottom: 30px;
+        padding-left: 25px;
+        background-color:$white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.active {
+    display: block;
+}
+
+.modal .splide__slide {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.modal__icon::before {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
 }
