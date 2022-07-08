@@ -7,6 +7,9 @@ $iconcolor:#7E5AFF;
 body {
     overflow-x: hidden;
 }
+.section-title {
+    text-transform: uppercase;
+}
 .container {
     width: 100%;
     max-width: 1200px;
@@ -42,6 +45,7 @@ a {
     }
 
     &__title {
+        text-transform: uppercase;
         text-align: center;
         font-family: 'Montserrat';
         font-style: normal;
@@ -53,6 +57,7 @@ a {
     }
 
     &__subtitle {
+        text-transform: uppercase;
         padding-top: 20px;
         text-align: center;
         font-family: 'Montserrat';
@@ -193,6 +198,7 @@ a {
 }
 
 .title {
+    text-transform: uppercase;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -202,6 +208,7 @@ a {
     color: $textcolor;
 }
 .subtitle {
+    text-transform: uppercase;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
@@ -299,6 +306,7 @@ a {
         flex-direction: column;
     }
     &__title {
+        text-transform: uppercase;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
@@ -343,6 +351,7 @@ a {
     flex-direction: column;
 }
 .user-name {
+    text-transform: uppercase;
     padding-bottom: 6px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -458,6 +467,9 @@ a {
 
     }
 
+}
+.btn {
+    text-transform: uppercase;
 }
 .container {
     padding-bottom: 100px;
