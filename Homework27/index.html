@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css,npm/@splidejs/splide@4.0.7/dist/css/splide-core.min.css,npm/@splidejs/splide@4.0.7/dist/css/themes/splide-default.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1fed6140dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"
+      defer
+    ></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__flex">
+          <div class="header__logo">
+            <img src="assets/images/headerlogo.png" alt="logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#">Home</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#">Catalog</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#">News</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__icons">
+            <span class="fa-solid fa-magnifying-glass fa-2xl"></span>
+            <span class="fa-regular fa-circle-user fa-2xl"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="splide" role="group" id="hero-splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="container hero__container">
+                  <h1 class="hero__title">discover new options</h1>
+                  <button class="hero__btn">View more</button>
+                </div>
+                <img src="assets/images/guitars.png" alt="guitars" />
+              </li>
+              <li class="splide__slide">
+                <div class="container hero__container">
+                  <h1 class="hero__title">expand your horizons</h1>
+                  <button class="hero__btn">View more</button>
+                </div>
+                <img src="assets/images/guitarsea.png" alt="guitarsea" />
+              </li>
+              <li class="splide__slide">
+                <div class="container hero__container">
+                  <h1 class="hero__title">Find your own style</h1>
+                  <button class="hero__btn">View more</button>
+                </div>
+                <img src="assets/images/guitarscene.png" alt="guitar" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="arrivals">
+        <div class="container arrivals__container">
+          <h2 class="title arrivals__title">new arrivals</h2>
+          <div class="splide" role="group" id="arrivals-splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <a href="#" class="shop-link">
+                    <span class="shop-status">in stock</span>
+                    <div class="img-container arrivals__image-container">
+                      <img
+                        src="assets/images/red.png"
+                        alt="guitar"
+                        class="shop-image"
+                      />
+                      <h3 class="shop-title">Hagstrom Alvar Limited Edition</h3>
+                      <span class="shop-price">€2.990,00</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a href="#" class="shop-link">
+                    <span class="shop-status">in stock</span>
+                    <div class="img-container arrivals__image-container">
+                      <img
+                        src="assets/images/blue.png"
+                        alt="guitar"
+                        class="shop-image"
+                      />
+                      <h3 class="shop-title">
+                        Hagstrom Tremar Viking Deluxe Cloudy Seas
+                      </h3>
+                      <span class="shop-price">€1.300,00</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a href="#" class="shop-link">
+                    <span class="shop-status sold">sold</span>
+                    <div class="img-container arrivals__image-container">
+                      <img
+                        src="assets/images/brown.png"
+                        alt="guitar"
+                        class="shop-image"
+                      />
+                      <h3 class="shop-title">Gibson Les Paul Standard 60s</h3>
+                      <span class="shop-price">€3.749,00</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a href="#" class="shop-link">
+                    <span class="shop-status">in stock</span>
+                    <div class="img-container arrivals__image-container">
+                      <img
+                        src="assets/images/blackwhite.png"
+                        alt="guitar"
+                        class="shop-image"
+                      />
+                      <h3 class="shop-title">
+                        Suhr Standard Plus Trans Blue Denim
+                      </h3>
+                      <span class="shop-price">€3.449,00</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="splide__slide">
+                  <a href="#" class="shop-link">
+                    <span class="shop-status">in stock</span>
+                    <div class="img-container arrivals__image-container">
+                      <img
+                        src="assets/images/idontknow.png"
+                        alt="guitar"
+                        class="shop-image"
+                      />
+                      <h3 class="shop-title">
+                        Fender Telecaster Black Paisley Limited Edition
+                      </h3>
+                      <span class="shop-price">€1.499,00</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows splide__arrows--ltr">
+              <button
+                class="splide__arrow splide__arrow--prev"
+                type="button"
+                aria-label="Previous slide"
+                aria-controls="splide01-track"
+              >
+                <svg class="shop-icon">
+                  <use xlink:href="./assets/images/sprite.svg#prev"></use>
+                </svg>
+              </button>
+              <button
+                class="splide__arrow splide__arrow--next"
+                type="button"
+                aria-label="Next slide"
+                aria-controls="splide01-track"
+              >
+                <svg>
+                  <use xlink:href="./assets/images/sprite.svg#next"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button class="btn arrivals__btn">View more</button>
+        </div>
+      </section>
+      <section class="partners">
+        <div class="container partners__container">
+          <h2 class="title partners__title">our partners</h2>
+          <div class="splide" role="group" id="partners-splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="assets/images/item1.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item2.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item3.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item4.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item5.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item6.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item7.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item8.png" alt="partner" />
+                </li>
+                <li class="splide__slide">
+                  <img src="assets/images/item9.png" alt="partner" />
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows splide__arrows--ltr">
+              <button
+                class="splide__arrow splide__arrow--prev"
+                type="button"
+                aria-label="Previous slide"
+                aria-controls="splide01-track"
+              >
+                <svg class="icon">
+                  <use xlink:href="./assets/images/sprite.svg#prev"></use>
+                </svg>
+              </button>
+              <button
+                class="splide__arrow splide__arrow--next"
+                type="button"
+                aria-label="Next slide"
+                aria-controls="splide01-track"
+              >
+                <svg class="icon">
+                  <use xlink:href="./assets/images/sprite.svg#next"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer-flex">
+          <div class="footer-navblock">
+            <a href="#"
+              ><img src="assets/images/footer-logo.png" alt="logo"
+            /></a>
+            <nav class="footer__nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a class="nav__link" href="#">Home</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#">Catalog</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#">News</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-contacts">
+            <h3 class="contacts-title">Contact Us</h3>
+            <ul class="social">
+              <li class="social__item">
+                <a href="#">
+                  <span class="fa-brands fa-instagram fa-2xl"></span
+                ></a>
+              </li>
+              <li class="social__item">
+                <a href="#">
+                  <span class="fa-brands fa-facebook-f fa-2xl"></span
+                ></a>
+              </li>
+              <li class="social__item">
+                <a href="#">
+                  <span class="fa-brands fa-pinterest-p fa-2xl"></span
+                ></a>
+              </li>
+              <li class="social__item">
+                <a href="#">
+                  <span class="fa-brands fa-twitter fa-2xl"></span
+                ></a>
+              </li>
+              <li class="social__item">
+                <a href="#">
+                  <span class="fa-brands fa-youtube fa-2xl"></span
+                ></a>
+              </li>
+            </ul>
+            <a class="footer-tel" href="tel:+08003004040">0800 300 4040</a>
+          </div>
+        </div>
+        <p class="copyright">© Copyright 2022. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
