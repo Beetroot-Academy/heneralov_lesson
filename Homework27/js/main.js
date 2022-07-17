@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: false,
     pauseOnHover: false,
     breakpoints: {
-      768: {
+      767: {
         perPage: 1,
         arrows: false,
         pagination: true,
       },
-      1320: {
+      1319: {
         perPage: 3,
         gap: '15px',
         
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
     direction: 'ltr',
 
     breakpoints: {
-      768: {
-        perPage: 3,
+      767: {
+        perPage: 2,
         arrows: false,
         pagination: true,
       },
-      1320: {
+      1319: {
         perPage: 6,
         gap: '15px',
         

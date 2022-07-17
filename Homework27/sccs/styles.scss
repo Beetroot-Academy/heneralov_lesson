@@ -12,6 +12,9 @@ $mobile: 320px;
 a {
     text-decoration: none;
 }
+body {
+    box-sizing: border-box;
+}
 .header {
     background-color: $brown-light;
     &__container {
@@ -22,23 +25,22 @@ a {
     &__flex {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
 
     }
 
     &__logo {
-        padding-left: 50px;
         padding-top: 23px;
         padding-bottom: 23px;
     }
 
     &__icons {
-        padding-left: 320px;
         padding-top: 35px;
         display: flex;
         flex-direction: row;
         gap: 30px;
         @media screen and (max-width: $tablet) {
-            padding-left: 20px;
+            gap: 15px;
         }
         
     }
@@ -50,13 +52,15 @@ a {
     padding: 0 15px;
 }
 .nav {
-    padding-left: 230px;
     padding-top: 28px;
     padding-bottom: 28px;
     &__list {
         display: flex;
         flex-direction: row;
         gap: 35px;
+        @media screen and (max-width: $tablet) {
+            gap: 10px;
+        }
     }
 
     &__item {
@@ -69,6 +73,9 @@ a {
         font-size: 20px;
         line-height: 24px;
         color: $black;
+        @media screen and (max-width: $tablet) {
+            font-size: 12px;
+        }
     }
 }
 .fa-solid {
@@ -90,7 +97,7 @@ a {
     }
 
     &__title {
-        width: 28%;
+        width: 400px;
         margin-bottom: 21px;
         font-family: 'Montserrat';
         font-style: normal;
@@ -100,6 +107,9 @@ a {
         text-align: center;
         text-transform: uppercase;
         color: $brown-light;
+        @media screen and (max-width: $tablet) {
+            font-size: 26px;
+        }
 
     }
 
@@ -225,7 +235,6 @@ a {
 	object-fit: cover;
 }
  .arrivals .splide__slide {
-    max-width: 19%;
     border: 1px solid $brown-light;
 }
  .arrivals .splide__arrow {
@@ -413,6 +422,7 @@ a {
     flex-direction: column;
     @media screen and (max-width: $tablet) {
         flex-direction: row;
+        justify-content: space-between;
     }
     
 }
