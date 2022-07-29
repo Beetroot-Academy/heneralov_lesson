@@ -3,13 +3,15 @@
         <v-btn
           v-if="resType == 1"
           @click="openRes = !openRes"
-          color="normal"
+          class="res-btn"
+          color="#212121"
           >Resolution >={{ resValue }}</v-btn
         >
-        <v-btn
+        <v-btn 
           v-else-if="resType == 2"
           @click="(openRes = !openRes)"
-          color="normal"
+          class="res-btn"
+          color="#212121"
           >Resolution = {{ exactRes }}</v-btn
         >
         <div v-if="openRes" v-click-outside="onClickOutside" class="resolution-dropdown">
@@ -451,6 +453,15 @@ methods: {
 
 }
 .resolution-block {
-  
+  padding-top:25px ;
+}
+.resolution-dropdown {
+  position: absolute;
+  left: 30%;
+  width: 600px;
+}
+.res-btn {
+  color: white;
+  background-color:#212121;
 }
 </style>
