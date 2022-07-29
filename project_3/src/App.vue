@@ -67,6 +67,7 @@ img {
   display: inline-block;
   width: 300px;
   height: 200px;
+  background-color: black;
 }
 .active {
   color: green;

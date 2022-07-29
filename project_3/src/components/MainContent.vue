@@ -15,6 +15,7 @@
         @keypress="fetchSearch"
       />
       </div>
+      <div class="filters-flex">
       <input
         v-model="order"
         type="radio"
@@ -71,23 +72,24 @@
           </select>
         </div>
         <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact"/>
+        </div>
         <div class="images-grid">
-        <div class="images-block">
+        <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="random">
             <img :src="wallpaper.path" alt="" />
           </div>
         </div>
-        <div class="images-block">
+        <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="toplist">
             <img :src="wallpaper.path" alt="" />
           </div>
         </div>
-        <div class="images-block">
+        <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="latest">
             <img :src="wallpaper.path" alt="" />
           </div>
         </div>
-        <div class="images-block">
+        <div v-if="filteredSearch.length > 0" class="images-block">
           <div
             v-for="wallpaper in filteredSearch"
             :key="wallpaper.id"
@@ -230,6 +232,9 @@ export default {
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  border: 5px solid red;
+  padding-top: 50px;
+  padding-bottom:50px ;
 }
 .search-bar {
   color: white;
@@ -242,5 +247,12 @@ export default {
 }
 .test {
   font-size: 300px;
+}
+
+.main__container {
+
+}
+.filters-flex {
+  
 }
 </style>

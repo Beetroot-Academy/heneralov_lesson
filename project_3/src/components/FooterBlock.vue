@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless fixed>
+  <v-footer dark padless >
     <v-card class="flex" flat tile>
       <v-card-title class="teal">
         <strong class="subheading"
