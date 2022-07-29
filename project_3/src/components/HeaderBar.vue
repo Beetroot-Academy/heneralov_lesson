@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <header class="header">
+    <header class="header" fixed>
       <div class="header-wrapper">
         <ul class="header-buttons">
           <li>

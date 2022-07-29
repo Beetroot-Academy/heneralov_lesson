@@ -444,4 +444,13 @@ methods: {
 
 
 <style scoped>
+.res-radio {
+  
+}
+.input-wrapper {
+
+}
+.resolution-block {
+  
+}
 </style>
