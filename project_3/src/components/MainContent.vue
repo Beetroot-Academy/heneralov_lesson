@@ -7,73 +7,92 @@
         @fetchTop="fetchTop"
       />
       <div class="search-wrapper">
-      <input
-        type="text"
-        class="search-bar"
-        placeholder="Search..."
-        v-model="query"
-        @keypress="fetchSearch"
-      />
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search..."
+          v-model="query"
+          @keypress="fetchSearch"
+        />
       </div>
       <div class="filters-flex">
-      <input
-        v-model="order"
-        type="radio"
-        value="desc"
-        checked
-        name="order"
-        id="desc"
-      />
-      <label for="desc">descending</label>
-      <input v-model="order" type="radio" value="asc" name="order" id="asc" />
-      <label for="asc">Ascending</label>
-      <div class="categories-block">
-        <input
-          v-model="checkedGeneral"
-          type="checkbox"
-          id="general"
-          name="general"
-          value="general "
-        />
-        <label for="general">General</label>
-        <input
-          v-model="checkedAnime"
-          type="checkbox"
-          id="anime"
-          name="anime"
-          value="anime"
-        />
-        <label for="anime">Anime</label>
-        <input
-          v-model="checkedPeople"
-          type="checkbox"
-          id="people"
-          name="people"
-          value="people"
-        />
-        <label for="people">People</label>
-        <select v-model="sort">
-          <option value="relevance">Relevance</option>
-          <option value="random">Random</option>
-          <option value="date_added">Date added</option>
-          <option value="views">Views</option>
-          <option value="favorites">Favorites</option>
-          <option value="toplist">Toplist</option>
-          <option value="hot">Hot</option>
-        </select>
-        <div class="top-range" v-if="sort == 'toplist'">
-          <select v-model="topSort">
-            <option value="1d">Last day</option>
-            <option value="3d">Last 3 days</option>
-            <option value="1w">Last week</option>
-            <option value="1m">Last month</option>
-            <option value="3m">Last 3 month</option>
-            <option value="1y">Last year</option>
-          </select>
+        <div class="categories-block">
+          <input
+            v-model="checkedGeneral"
+            type="checkbox"
+            id="general"
+            name="general"
+            value="general "
+            class="categories-checkbox"
+          />
+          <label for="general">General</label>
+          <input
+            v-model="checkedAnime"
+            type="checkbox"
+            id="anime"
+            name="anime"
+            value="anime"
+            class="categories-checkbox"
+          />
+          <label for="anime">Anime</label>
+          <input
+            v-model="checkedPeople"
+            type="checkbox"
+            id="people"
+            name="people"
+            value="people"
+            class="categories-checkbox"
+          />
+          <label for="people">People</label>
         </div>
-        <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact"/>
+        <div class="sort-filters">
+          <div class="sort-block">
+            <select v-model="sort" class="select-sort">
+              <option value="relevance">Relevance</option>
+              <option value="random">Random</option>
+              <option value="date_added">Date added</option>
+              <option value="views">Views</option>
+              <option value="favorites">Favorites</option>
+              <option value="toplist">Toplist</option>
+              <option value="hot">Hot</option>
+            </select>
+          </div>
+          <div class="top-range" v-if="sort == 'toplist'">
+            <select class="top-range-sort" v-model="topSort">
+              <option value="1d">Last day</option>
+              <option value="3d">Last 3 days</option>
+              <option value="1w">Last week</option>
+              <option value="1m">Last month</option>
+              <option value="3m">Last 3 month</option>
+              <option value="1y">Last year</option>
+            </select>
+          </div>
+          <div class="order">
+            <input
+              v-model="order"
+              type="radio"
+              value="desc"
+              checked
+              name="order"
+              id="desc"
+              class="order-input"
+            />
+            <label for="desc">Descending <v-icon class="arrow-icon">mdi-arrow-up</v-icon></label>
+            <input
+              v-model="order"
+              type="radio"
+              value="asc"
+              name="order"
+              id="asc"
+              class="order-input"
+            />
+            
+            <label for="asc">Ascending <v-icon class="arrow-icon">mdi-arrow-down</v-icon></label>
+          </div>
         </div>
-        <div class="images-grid">
+      </div>
+      <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact" />
+      <div class="images-grid">
         <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="random">
             <img :src="wallpaper.path" alt="" />
@@ -99,12 +118,14 @@
           </div>
         </div>
       </div>
-      </div>
-      <div v-if="start.length < 1 && filteredSearch.length < 1" class="main-content" >
-        <span class="test">Kekis Kekis</span>
-      </div>
     </div>
-    Test: {{ resValue }}{{ exactRes }} {{openRes}}
+    <div
+      v-if="start.length < 1 && filteredSearch.length < 1"
+      class="main-content"
+    >
+      <span class="test">Kekis Kekis</span>
+    </div>
+    Test: {{ resValue }}{{ exactRes }} {{ openRes }} 
   </main>
 </template>
 
@@ -134,17 +155,18 @@ export default {
       topSort: "1m",
       start: [],
       filteredSearch: [],
+      arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
     };
   },
 
   methods: {
-    changeAtleast (value) {
+    changeAtleast(value) {
       this.resValue = value;
-      this.resType = '1'
+      this.resType = "1";
     },
-    changeExact (value) {
-      this.resType = '2'
+    changeExact(value) {
+      this.resType = "2";
       this.exactRes = value;
     },
     fetchTop() {
@@ -186,10 +208,10 @@ export default {
       general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
       anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
       people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      if (this.resType === '2') {
+      if (this.resType === "2") {
         this.resValue = "";
       }
-      if (this.resType === '1') {
+      if (this.resType === "1") {
         this.exactRes = [];
       }
       let categories = categoriesArr.join("");
@@ -220,7 +242,6 @@ export default {
       console.log(value);
       this.topSort = value;
     },
-    
   },
 };
 </script>
@@ -234,7 +255,7 @@ export default {
   grid-template-rows: repeat(3, 1fr);
   border: 5px solid red;
   padding-top: 50px;
-  padding-bottom:50px ;
+  padding-bottom: 50px;
 }
 .search-bar {
   color: white;
@@ -250,9 +271,101 @@ export default {
 }
 
 .main__container {
-
 }
 .filters-flex {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sort-filters {
+  display: flex;
+  flex-direction: row;
+}
+.categories-checkbox {
+  display: none;
+}
+.categories-checkbox + label {
   
+}
+.categories-checkbox:checked + label {
+  
+  background-color: green;
+  transition: 0.3s;
+}
+.categories-checkbox:not(:checked) + label {
+  transition: 0.3s;
+  background-color: grey;
+}
+.categories-checkbox:checked + label,
+.categories-checkbox:not(:checked) + label {
+  padding: 10px;
+  border: 1px solid black;
+  margin-right: 5px;
+  border-radius:  8px ;
+  
+}
+.categories-checkbox:checked + label,
+.categories-checkbox:not(:checked) + label :hover {
+  cursor: pointer;
+}
+.select-sort {
+  color: white;
+  background-color: #212121;
+  text-align: center;
+  padding:5px ;
+  border: 1px solid black;
+  border-radius:8px ;
+  margin-top: -7px;
+  
+}
+.select-sort:hover {
+  cursor: pointer;
+}
+.order {
+  padding-left: 20px;
+}
+.order-input {
+  display: none;
+}
+.order-input:checked + label,
+.order-input:not(:checked) + label {
+  padding: 8px;
+  border: 1px solid black;
+  margin-right: 5px;
+  border-radius:8px;
+  
+  
+}
+
+.order-input:checked + label,
+.order-input:not(:checked) + label:hover {
+  cursor: pointer;
+}
+.order-input:checked + label {
+  background-color: #212121;
+  transition: 0.3s;
+}
+.order-input:not(:checked) + label {
+  color: #BDBDBD;
+  background-color:#616161 ;
+}
+
+.arrow-icon {
+  color: white;
+}
+.top-range-sort {
+  color: white;
+  background-color: #212121;
+  text-align: center;
+  padding:5px ;
+  border: 1px solid black;
+  border-radius:8px ;
+  margin-top: -7px;
+  margin-left:5px;
+  
+}
+.top-range-sort:hover {
+  cursor: pointer;
 }
 </style>
