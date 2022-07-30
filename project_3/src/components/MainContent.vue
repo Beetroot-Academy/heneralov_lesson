@@ -460,13 +460,11 @@ export default {
   position: absolute;
   bottom: 20px;
   right: 50px;
-  z-index: 1;
 }
 .prevpage {
   position: absolute;
   bottom: 20px;
   left: 50px;
-  z-index: 1;
 }
 .search-section {
   background-image: url('../assets/bg-image.jpg');
