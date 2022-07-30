@@ -1,6 +1,6 @@
 <template>
+<section class="header-bg">
   <div>
-    
     <header class="header" fixed>
       <div class="header-wrapper">
         <ul class="header-buttons">
@@ -22,7 +22,8 @@
         </ul>
       </div>
     </header>
-  </div>
+     </div>
+    </section>
 </template>
 
 <script>
@@ -47,11 +48,14 @@ export default {
   color: red;
 }
 .header {
-  
+}
+.header-bg {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #212121;
 }
 .header-wrapper {
   display: flex;
-  background-color: #212121;
   justify-content: space-between;
   padding: 10px 0px;
 }
