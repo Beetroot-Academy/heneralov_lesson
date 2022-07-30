@@ -44,7 +44,6 @@ export default {
   methods: {},
 };
 </script>
-
 <style>
 @import url("./assets/reset.css");
 #app {
@@ -56,14 +55,14 @@ export default {
   color: white;
 }
 .resolution-dropdown {
-  background-color: black;
+  background-color: #212121;
 }
 .search {
-  width: 60%;
+  
 }
 .tag {
 }
-img {
+.img {
   display: inline-block;
   width: 300px;
   height: 200px;
@@ -71,5 +70,8 @@ img {
 }
 .active {
   color: green;
+}
+a {
+  text-decoration: none;
 }
 </style>
