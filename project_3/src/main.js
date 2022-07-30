@@ -4,6 +4,7 @@ import App from './App.vue'
 
 
 Vue.config.productionTip = false
+import "@/assets/reset.css"
 
 new Vue({
   vuetify,

@@ -49,8 +49,8 @@ export default {
 #app {
   background-color: #21D4FD;
   background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-
-  /* max-width: 1200px; */
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
   text-align: center;
@@ -89,7 +89,7 @@ a {
     z-index: 1;
 }
 .modal-container {
-        width: 1200px;
+        width: 1100px;
         height: 100%;
         padding-left: 50px;
         padding-bottom: 25px;
@@ -104,7 +104,7 @@ a {
 }
 .modal-img {
   position: relative;
-  width: 1050px;
+  width: 1000px;
   height: 100%;
 }
 </style>
