@@ -1,11 +1,12 @@
 <template>
   <main>
-    <div class="container main__container">
+    <div class="container main__container" id="scrolltop">
       <HeaderBar
         @fetchLatest="fetchLatest"
         @fetchRandom="fetchRandom"
         @fetchTop="fetchTop"
       />
+      <div class="search-section">
       <div class="search-wrapper">
         <input
           type="text"
@@ -92,20 +93,21 @@
         </div>
       </div>
       <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact" />
+      </div>
       <div class="images-grid">
         <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="random">
-            <img :src="wallpaper.path" alt="" />
+            <v-img class="img" :src="wallpaper.path" alt="" />
           </div>
         </div>
         <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="toplist">
-            <img :src="wallpaper.path" alt="" />
+            <v-img class="img" :src="wallpaper.path" alt="" />
           </div>
         </div>
         <div v-if="start.length > 0" class="images-block">
           <div v-for="wallpaper in start" :key="wallpaper.id" class="latest">
-            <img :src="wallpaper.path" alt="" />
+            <v-img class="img" :src="wallpaper.path" alt="" />
           </div>
         </div>
         <div v-if="filteredSearch.length > 0" class="images-block">
@@ -114,13 +116,15 @@
             :key="wallpaper.id"
             class="tag"
           >
-            <img :src="wallpaper.path" alt="" />
+            <v-img class="img" :src="wallpaper.path" alt="" />
           </div>
+          <a v-if="page > 1" href="#scrolltop">  <v-btn  @click="fetchPrev" class="prevpage">Previous page</v-btn> </a>
+        <a href="#scrolltop">  <v-btn  @click="fetchNext" class="nextpage">Next page</v-btn> </a>
         </div>
       </div>
     </div>
-    <div
-      v-if="start.length < 1 && filteredSearch.length < 1"
+    <div 
+      v-if="start.length < 1 && filteredSearch.length < 1 && fetchSearch"
       class="main-content"
     >
       <span class="test">Kekis Kekis</span>
@@ -142,6 +146,7 @@ export default {
   data() {
     return {
       query: "",
+      openImage: false,
       atleast: false,
       exact: false,
       resValue: "",
@@ -154,6 +159,7 @@ export default {
       order: "desc",
       topSort: "1m",
       start: [],
+      page: 1,
       filteredSearch: [],
       arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
@@ -161,6 +167,10 @@ export default {
   },
 
   methods: {
+    nextPage() {
+      this.page++ ;
+      console.log(this.page);
+    },
     changeAtleast(value) {
       this.resValue = value;
       this.resType = "1";
@@ -173,30 +183,33 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       this.sort = "toplist";
+      this.page = 1;
       fetch(`${this.search}?sorting=toplist`)
         .then((res) => res.json())
         .then((json) => {
-          this.start = json.data;
+          this.filteredSearch = json.data;
         });
     },
     fetchRandom() {
       this.start = "";
       this.filteredSearch = "";
       this.sort = "random";
+      this.page = 1;
       fetch(`${this.search}?sorting=random`)
         .then((res) => res.json())
         .then((json) => {
-          this.start = json.data;
+          this.filteredSearch = json.data;
         });
     },
     fetchLatest() {
       this.start = "";
       this.filteredSearch = "";
       this.sort = "date_added";
+      this.page = 1;
       fetch(`${this.search}?sorting=date_added`)
         .then((res) => res.json())
         .then((json) => {
-          this.start = json.data;
+          this.filteredSearch = json.data;
         });
     },
 
@@ -217,15 +230,64 @@ export default {
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
         this.start = "";
+        this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}`
+          `${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
             this.filteredSearch = json.data;
           });
       }
+    },
+    fetchNext() {
+      let general = this.checkedGeneral;
+      let anime = this.checkedAnime;
+      let people = this.checkedPeople;
+      let categoriesArr = [general, anime, people];
+      general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
+      anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
+      people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
+      if (this.resType === "2") {
+        this.resValue = "";
+      }
+      if (this.resType === "1") {
+        this.exactRes = [];
+      }
+      let categories = categoriesArr.join("");
+      this.page ++;
+      this.start = "";
+      this.filteredSearch = "";
+      fetch(`${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`)
+        .then((res) => res.json())
+        .then((json) => {
+          this.filteredSearch = json.data;
+        });
+    },
+    fetchPrev() {
+      let general = this.checkedGeneral;
+      let anime = this.checkedAnime;
+      let people = this.checkedPeople;
+      let categoriesArr = [general, anime, people];
+      general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
+      anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
+      people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
+      if (this.resType === "2") {
+        this.resValue = "";
+      }
+      if (this.resType === "1") {
+        this.exactRes = [];
+      }
+      let categories = categoriesArr.join("");
+      this.page --;
+      this.start = "";
+      this.filteredSearch = "";
+      fetch(`${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`)
+        .then((res) => res.json())
+        .then((json) => {
+          this.filteredSearch = json.data;
+        });
     },
   },
   computed: {},
@@ -248,14 +310,15 @@ export default {
 
 <style scoped>
 .images-block {
+  position: relative;
   display: grid;
   margin: 0 auto;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border: 5px solid red;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 .search-bar {
   color: white;
@@ -290,7 +353,7 @@ export default {
 }
 .categories-checkbox:checked + label {
   
-  background-color: green;
+  background-color: #00C853;
   transition: 0.3s;
 }
 .categories-checkbox:not(:checked) + label {
@@ -343,11 +406,11 @@ export default {
   cursor: pointer;
 }
 .order-input:checked + label {
-  background-color: #212121;
+  background-color: #00C853;
   transition: 0.3s;
 }
 .order-input:not(:checked) + label {
-  color: #BDBDBD;
+  color: white;
   background-color:#616161 ;
 }
 
@@ -367,5 +430,23 @@ export default {
 }
 .top-range-sort:hover {
   cursor: pointer;
+}
+.nextpage {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  z-index: 1;
+}
+.prevpage {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  z-index: 1;
+}
+.search-section {
+  background-image: url('../assets/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>

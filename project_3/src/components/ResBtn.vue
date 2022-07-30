@@ -23,6 +23,7 @@
               checked
               id="atleast"
               name="res-type"
+              class="res-switcher"
             />
             <label for="res-type">Atleast</label>
             <input
@@ -31,16 +32,19 @@
               value="2"
               id="Exact"
               name="res-type"
+              class="res-switcher"
             />
             <label for="res-type">Exact</label>
           </div>
           <div class="res-radio" v-if="resType == 1">
+            <tr>
             <input
               v-model="resValue"
               type="radio"
               value="2560x1080"
               id="res1"
               name="res"
+              class="res-input"
             />
             <label for="res1">2560 x 1080</label>
             <input
@@ -49,6 +53,7 @@
               value="3440x1440"
               id="res2"
               name="res"
+              class="res-input"
             />
             <label for="res2">3440 x 1440</label>
             <input
@@ -57,6 +62,7 @@
               value="3840x1600"
               id="res3"
               name="res"
+              class="res-input"
             />
             <label for="res3">3840 x 1600</label>
             <input
@@ -65,6 +71,7 @@
               value="1280x720"
               id="res4"
               name="res"
+              class="res-input"
             />
             <label for="res4">1280 x 720</label>
             <input
@@ -73,14 +80,18 @@
               value="1600x900"
               id="res5"
               name="res"
+              class="res-input"
             />
             <label for="res5">1600 x 900</label>
+            </tr>
+            <tr>
             <input
               v-model="resValue"
               type="radio"
               value="1920x1080"
               id="res6"
               name="res"
+              class="res-input"
             />
             <label for="res6">1920 x 1080</label>
             <input
@@ -89,6 +100,7 @@
               value="2560x1440"
               id="res7"
               name="res"
+              class="res-input"
             />
             <label for="res7">2560 x 1440</label>
             <input
@@ -97,6 +109,7 @@
               value="3840x2160"
               id="res8"
               name="res"
+              class="res-input"
             />
             <label for="res8">3840 x 2160</label>
             <input
@@ -105,6 +118,7 @@
               value="1280x800"
               id="res9"
               name="res"
+              class="res-input"
             />
             <label for="res9">1280 x 800</label>
             <input
@@ -113,14 +127,18 @@
               value="1600x1000"
               id="res10"
               name="res"
+              class="res-input"
             />
             <label for="res10">1600 x 1000</label>
+            </tr>
+            <tr>
             <input
               v-model="resValue"
               type="radio"
               value="1920x1200"
               id="res11"
               name="res"
+              class="res-input"
             />
             <label for="res11">1920 x 1200 </label>
             <input
@@ -129,6 +147,7 @@
               value="2560x1600"
               id="res12"
               name="res"
+              class="res-input"
             />
             <label for="res12">2560 x 1600</label>
             <input
@@ -137,6 +156,7 @@
               value="3840x2400"
               id="res13"
               name="res"
+              class="res-input"
             />
             <label for="res13">3840 x 2400</label>
             <input
@@ -145,6 +165,7 @@
               value="1280x960"
               id="res14"
               name="res"
+              class="res-input"
             />
             <label for="res14">1280 x 960</label>
             <input
@@ -153,14 +174,18 @@
               value="1600x1200"
               id="res15"
               name="res"
+              class="res-input"
             />
             <label for="res15">1600 x 1200</label>
+            </tr>
+            <tr>
             <input
               v-model="resValue"
               type="radio"
               value="1920x1440"
               id="res16"
               name="res"
+              class="res-input"
             />
             <label for="res16">1920 x 1440</label>
             <input
@@ -169,6 +194,7 @@
               value="2560x1920"
               id="res17"
               name="res"
+              class="res-input"
             />
             <label for="res17">2560 x 1920</label>
             <input
@@ -177,6 +203,7 @@
               value="3840x2880"
               id="res18"
               name="res"
+              class="res-input"
             />
             <label for="res18">3840 x 2880</label>
             <input
@@ -185,6 +212,7 @@
               value="1280x1024"
               id="res19"
               name="res"
+              class="res-input"
             />
             <label for="res19">1280 x 1024</label>
             <input
@@ -193,14 +221,18 @@
               value="1600x1280"
               id="res20"
               name="res"
+              class="res-input"
             />
             <label for="res20">1600 x 1280</label>
+            </tr>
+            <tr>
             <input
               v-model="resValue"
               type="radio"
               value="1920x1536"
               id="res21"
               name="res"
+              class="res-input"
             />
             <label for="res21">1920 x 1536</label>
             <input
@@ -209,6 +241,7 @@
               value="2560x2048"
               id="res22"
               name="res"
+              class="res-input"
             />
             <label for="res22">2560 x 2048</label>
             <input
@@ -217,8 +250,10 @@
               value="3840x3072"
               id="res23"
               name="res"
+              class="res-input"
             />
             <label for="res23">3840 x 3072</label>
+            </tr>
           </div>
           <div class="res-radio" v-if="resType == 2">
             <input
@@ -227,6 +262,7 @@
               value="2560x1080"
               id="res1"
               name="res"
+              class="res-input"
             />
             <label for="res1">2560 x 1080</label>
             <input
@@ -235,6 +271,7 @@
               value="3440x1440"
               id="res2"
               name="res"
+              class="res-input"
             />
             <label for="res2">3440 x 1440</label>
             <input
@@ -243,6 +280,7 @@
               value="3840x1600"
               id="res3"
               name="res"
+              class="res-input"
             />
             <label for="res3">3840 x 1600</label>
             <input
@@ -251,6 +289,7 @@
               value="1280x720"
               id="res4"
               name="res"
+              class="res-input"
             />
             <label for="res4">1280 x 720</label>
             <input
@@ -259,6 +298,7 @@
               value="1600x900"
               id="res5"
               name="res"
+              class="res-input"
             />
             <label for="res5">1600 x 900</label>
             <input
@@ -267,6 +307,7 @@
               value="1920x1080"
               id="res6"
               name="res"
+              class="res-input"
             />
             <label for="res6">1920 x 1080</label>
             <input
@@ -275,6 +316,7 @@
               value="2560x1440"
               id="res7"
               name="res"
+              class="res-input"
             />
             <label for="res7">2560 x 1440</label>
             <input
@@ -283,6 +325,7 @@
               value="3840x2160"
               id="res8"
               name="res"
+              class="res-input"
             />
             <label for="res8">3840 x 2160</label>
             <input
@@ -291,6 +334,7 @@
               value="1280x800"
               id="res9"
               name="res"
+              class="res-input"
             />
             <label for="res9">1280 x 800</label>
             <input
@@ -299,6 +343,7 @@
               value="1600x1000"
               id="res10"
               name="res"
+              class="res-input"
             />
             <label for="res10">1600 x 1000</label>
             <input
@@ -307,6 +352,7 @@
               value="1920x1200"
               id="res11"
               name="res"
+              class="res-input"
             />
             <label for="res11">1920 x 1200 </label>
             <input
@@ -315,6 +361,7 @@
               value="2560x1600"
               id="res12"
               name="res"
+              class="res-input"
             />
             <label for="res12">2560 x 1600</label>
             <input
@@ -323,6 +370,7 @@
               value="3840x2400"
               id="res13"
               name="res"
+              class="res-input"
             />
             <label for="res13">3840 x 2400</label>
             <input
@@ -331,6 +379,7 @@
               value="1280x960"
               id="res14"
               name="res"
+              class="res-input"
             />
             <label for="res14">1280 x 960</label>
             <input
@@ -339,6 +388,7 @@
               value="1600x1200"
               id="res15"
               name="res"
+              class="res-input"
             />
             <label for="res15">1600 x 1200</label>
             <input
@@ -347,6 +397,7 @@
               value="1920x1440"
               id="res16"
               name="res"
+              class="res-input"
             />
             <label for="res16">1920 x 1440</label>
             <input
@@ -355,6 +406,7 @@
               value="2560x1920"
               id="res17"
               name="res"
+              class="res-input"
             />
             <label for="res17">2560 x 1920</label>
             <input
@@ -363,6 +415,7 @@
               value="3840x2880"
               id="res18"
               name="res"
+              class="res-input"
             />
             <label for="res18">3840 x 2880</label>
             <input
@@ -371,6 +424,7 @@
               value="1280x1024"
               id="res19"
               name="res"
+              class="res-input"
             />
             <label for="res19">1280 x 1024</label>
             <input
@@ -379,6 +433,7 @@
               value="1600x1280"
               id="res20"
               name="res"
+              class="res-input"
             />
             <label for="res20">1600 x 1280</label>
             <input
@@ -387,6 +442,7 @@
               value="1920x1536"
               id="res21"
               name="res"
+              class="res-input"
             />
             <label for="res21">1920 x 1536</label>
             <input
@@ -395,6 +451,7 @@
               value="2560x2048"
               id="res22"
               name="res"
+              class="res-input"
             />
             <label for="res22">2560 x 2048</label>
             <input
@@ -403,6 +460,7 @@
               value="3840x3072"
               id="res23"
               name="res"
+              class="res-input"
             />
             <label for="res23">3840 x 3072</label>
           </div>
@@ -454,14 +512,52 @@ methods: {
 }
 .resolution-block {
   padding-top:25px ;
+  padding-bottom: 150px;
+  position: relative;
 }
 .resolution-dropdown {
   position: absolute;
-  left: 30%;
-  width: 600px;
+  right: 200px;
+  bottom: 5px;
+
+  
+  width: fit-content;
+  height: fit-content;
 }
 .res-btn {
   color: white;
   background-color:#212121;
 }
+
+.res-input {
+ display: none;
+}
+.res-input + label {
+  
+}
+.res-input:checked + label,
+.res-input:not(:checked) + label {
+  padding: 1px;
+  border: 1px solid black;
+  z-index: 1;
+  margin-right: 2px;
+  font-size: 12px;
+  
+}
+.res-input:checked + label {
+  background-color: #00C853;
+  transition: 0.3s;
+}
+.res-input:not(:checked) + label {
+  color: #BDBDBD;
+  background-color:#616161 ;
+}
+.res-switcher + label {
+  margin-right:25px ;
+}
+.res-radio {
+  display: inline-table;
+  
+}
+
 </style>
