@@ -89,16 +89,22 @@ a {
     z-index: 1;
 }
 .modal-container {
-        width: 50%;
-        height: 75%;
-        padding-top: 30px;
-        padding-right: 25px;
-        padding-bottom: 30px;
-        padding-left: 25px;
-        background-color:white;
+        width: 1200px;
+        height: 100%;
+        padding-left: 50px;
+        padding-bottom: 25px;
+        padding-top:25px;
+        padding-right: 50px;
+        background-color:#212121;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
+}
+.modal-img {
+  position: relative;
+  width: 1050px;
+  height: 100%;
 }
 </style>
