@@ -118,10 +118,10 @@
           >
           <div class="modal" v-if="openModal">
             <div class="modal-container">
-              <v-img v-click-outside="closeModal" :src="wallpaper.path" alt="" />
+              <v-img v-click-outside="closeModal" class="modal-img" :src="selectedImgPath" alt="" />
             </div>
           </div>
-            <v-img @click="openModal = true" @loadstart="imageCounter++" class="img" :src="wallpaper.path" alt="" />
+            <v-img @click="imageModal(wallpaper.path)" @loadstart="imageCounter++" class="img" :src="wallpaper.path" alt="" />
           </div>
           <a v-if="page > 1" href="#scrolltop">  <v-btn  @click="fetchPrev" class="prevpage">Previous page</v-btn> </a>
         <a href="#scrolltop">  <v-btn v-if="imageCounter > 23"  @click="fetchNext" class="nextpage">Next page</v-btn> </a>
@@ -153,6 +153,7 @@ export default {
       imageCounter: 0,
       query: "",
       openModal: false,
+      selectedImgPath: '',
       atleast: false,
       exact: false,
       resValue: "",
@@ -173,6 +174,10 @@ export default {
   },
 
   methods: {
+    imageModal(imgPath) {
+      this.selectedImgPath = imgPath
+      this.openModal = true;
+    },
     closeModal() {
       this.openModal = false;
     },
@@ -239,6 +244,7 @@ export default {
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
         this.start = "";
+        this.imageCounter = 0;
         this.page = 1;
         this.filteredSearch = "";
         fetch(
