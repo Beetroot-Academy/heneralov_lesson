@@ -47,7 +47,9 @@ export default {
 <style>
 @import url("./assets/reset.css");
 #app {
-  background:#263238;
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
   /* max-width: 1200px; */
   margin: 0 auto;
   padding: 0 15px;
@@ -64,14 +66,39 @@ export default {
 }
 .img {
   display: inline-block;
-  width: 300px;
+  max-width: 300px;
   height: 200px;
   background-color: black;
+   
+ 
+  
 }
 .active {
   color: green;
 }
 a {
   text-decoration: none;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+.modal-container {
+        width: 50%;
+        height: 75%;
+        padding-top: 30px;
+        padding-right: 25px;
+        padding-bottom: 30px;
+        padding-left: 25px;
+        background-color:white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 }
 </style>

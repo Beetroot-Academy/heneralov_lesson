@@ -1,18 +1,10 @@
 <template>
 <div class="resolution-block">
         <v-btn
-          v-if="resType == 1"
           @click="openRes = !openRes"
           class="res-btn"
           color="#212121"
-          >Resolution >={{ resValue }}</v-btn
-        >
-        <v-btn 
-          v-else-if="resType == 2"
-          @click="(openRes = !openRes)"
-          class="res-btn"
-          color="#212121"
-          >Resolution = {{ exactRes }}</v-btn
+          >Resolution</v-btn
         >
         <div v-if="openRes" v-click-outside="onClickOutside" class="resolution-dropdown">
           <div class="input-wrapper">
@@ -37,7 +29,7 @@
             <label for="res-type">Exact</label>
           </div>
           <div class="res-radio" v-if="resType == 1">
-            <tr>
+            <div class="checkbox-wrapper">
             <input
               v-model="resValue"
               type="radio"
@@ -83,8 +75,8 @@
               class="res-input"
             />
             <label for="res5">1600 x 900</label>
-            </tr>
-            <tr>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="resValue"
               type="radio"
@@ -130,8 +122,8 @@
               class="res-input"
             />
             <label for="res10">1600 x 1000</label>
-            </tr>
-            <tr>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="resValue"
               type="radio"
@@ -177,8 +169,8 @@
               class="res-input"
             />
             <label for="res15">1600 x 1200</label>
-            </tr>
-            <tr>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="resValue"
               type="radio"
@@ -224,8 +216,8 @@
               class="res-input"
             />
             <label for="res20">1600 x 1280</label>
-            </tr>
-            <tr>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="resValue"
               type="radio"
@@ -253,9 +245,10 @@
               class="res-input"
             />
             <label for="res23">3840 x 3072</label>
-            </tr>
+            </div>
           </div>
           <div class="res-radio" v-if="resType == 2">
+            <div class="checkbox-wrapper">
             <input
               v-model="exactRes"
               type="checkbox"
@@ -301,6 +294,8 @@
               class="res-input"
             />
             <label for="res5">1600 x 900</label>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="exactRes"
               type="checkbox"
@@ -346,6 +341,8 @@
               class="res-input"
             />
             <label for="res10">1600 x 1000</label>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="exactRes"
               type="checkbox"
@@ -391,6 +388,8 @@
               class="res-input"
             />
             <label for="res15">1600 x 1200</label>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="exactRes"
               type="checkbox"
@@ -436,6 +435,8 @@
               class="res-input"
             />
             <label for="res20">1600 x 1280</label>
+            </div>
+            <div class="checkbox-wrapper">
             <input
               v-model="exactRes"
               type="checkbox"
@@ -463,6 +464,7 @@
               class="res-input"
             />
             <label for="res23">3840 x 3072</label>
+            </div>
           </div>
         </div>
       </div>
@@ -511,20 +513,21 @@ methods: {
 
 }
 .resolution-block {
-  padding-top:25px ;
-  padding-bottom: 150px;
-  position: relative;
+  padding-right: 20px;
+  
 }
 .resolution-dropdown {
   position: absolute;
-  right: 200px;
+  right: 0px;
   bottom: 5px;
-
+  padding: 0px 15px;
   
   width: fit-content;
   height: fit-content;
 }
 .res-btn {
+  
+  margin-top: -5px;
   color: white;
   background-color:#212121;
 }
@@ -558,6 +561,9 @@ methods: {
 .res-radio {
   display: inline-table;
   
+}
+.checkbox-wrapper {
+  display: flex;
 }
 
 </style>

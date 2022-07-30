@@ -91,8 +91,8 @@
             <label for="asc">Ascending <v-icon class="arrow-icon">mdi-arrow-down</v-icon></label>
           </div>
         </div>
+        <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact" />
       </div>
-      <ResBtn @onChangeAtleast="changeAtleast" @onChangeExact="changeExact" />
       </div>
       <div class="images-grid">
         <div v-if="start.length > 0" class="images-block">
@@ -116,10 +116,15 @@
             :key="wallpaper.id"
             class="tag"
           >
-            <v-img class="img" :src="wallpaper.path" alt="" />
+          <div class="modal" v-if="openModal">
+            <div class="modal-container">
+              <v-img v-click-outside="closeModal" :src="wallpaper.path" alt="" />
+            </div>
+          </div>
+            <v-img @click="openModal = true" @loadstart="imageCounter++" class="img" :src="wallpaper.path" alt="" />
           </div>
           <a v-if="page > 1" href="#scrolltop">  <v-btn  @click="fetchPrev" class="prevpage">Previous page</v-btn> </a>
-        <a href="#scrolltop">  <v-btn  @click="fetchNext" class="nextpage">Next page</v-btn> </a>
+        <a href="#scrolltop">  <v-btn v-if="imageCounter > 23"  @click="fetchNext" class="nextpage">Next page</v-btn> </a>
         </div>
       </div>
     </div>
@@ -129,7 +134,7 @@
     >
       <span class="test">Kekis Kekis</span>
     </div>
-    Test: {{ resValue }}{{ exactRes }} {{ openRes }} 
+    
   </main>
 </template>
 
@@ -145,8 +150,9 @@ export default {
   props: [],
   data() {
     return {
+      imageCounter: 0,
       query: "",
-      openImage: false,
+      openModal: false,
       atleast: false,
       exact: false,
       resValue: "",
@@ -167,6 +173,9 @@ export default {
   },
 
   methods: {
+    closeModal() {
+      this.openModal = false;
+    },
     nextPage() {
       this.page++ ;
       console.log(this.page);
@@ -256,6 +265,7 @@ export default {
         this.exactRes = [];
       }
       let categories = categoriesArr.join("");
+      this.imageCounter = 0;
       this.page ++;
       this.start = "";
       this.filteredSearch = "";
@@ -316,18 +326,21 @@ export default {
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  border: 5px solid red;
+  border: 5px solid #D1C4E9;
   padding-top: 75px;
   padding-bottom: 75px;
+  background-color: #212121;
 }
 .search-bar {
   color: white;
   padding: 10px;
   background-color: #212121;
   width: 400px;
+  
 }
 .search-wrapper {
   padding-top: 40px;
+  padding-bottom: 50px;
 }
 .test {
   font-size: 300px;
@@ -336,10 +349,13 @@ export default {
 .main__container {
 }
 .filters-flex {
-  padding-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
+  background-color: #212121;
 }
 .sort-filters {
   display: flex;
@@ -371,6 +387,9 @@ export default {
 .categories-checkbox:checked + label,
 .categories-checkbox:not(:checked) + label :hover {
   cursor: pointer;
+}
+.categories-block {
+  padding-left: 20px;
 }
 .select-sort {
   color: white;
@@ -448,5 +467,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-bottom: 150px;
+  position: relative;
 }
 </style>
