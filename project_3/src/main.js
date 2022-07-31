@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import vuetify from '@/plugins/vuetify'
 import App from './App.vue'
-
+import "@/assets/reset.css"
 
 Vue.config.productionTip = false
-import "@/assets/reset.css"
+
 
 new Vue({
   vuetify,

@@ -1,5 +1,5 @@
 <template>
-  <main @open="fetchLatest">
+  <main>
     <div class="container main__container" id="scrolltop">
       <HeaderBar
         @fetchLatest="fetchLatest"
@@ -139,12 +139,16 @@
         </div>
       </div>
     </div>
-    <div v-if="startPage == true" class="main-content">
+    <div v-if="startPage" class="main-content">
       <span class="test">Kekis Kekis</span>
     </div>
-    <div class="not-found" v-if="notFound == true && filteredSearch.length < 1">
-      <span class="not-found-text">Images not found</span>
+    <div v-else-if="isLoading" class="lds-dual-ring"></div>
+    <div class="not-found" v-else-if="!filteredSearch.length">
+      <span class="not-found-text">Images for your request are not found</span>
+      <span class="not-found-text">Try again!</span>
     </div>
+    
+    
   </main>
 </template>
 
@@ -161,6 +165,7 @@ export default {
   data() {
     return {
       startPage: true,
+      isLoading: false,
       notFound: false,
       imageCounter: 0,
       query: "",
@@ -207,6 +212,8 @@ export default {
     },
     fetchTop() {
       this.start = "";
+      this.startPage = false;
+      this.isLoading = true;
       this.filteredSearch = "";
       this.sort = "toplist";
       this.page = 1;
@@ -214,21 +221,25 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        });
+        }).finally(() => this.isLoading = false);
     },
     fetchRandom() {
       this.start = "";
+      this.startPage = false;
       this.filteredSearch = "";
+      this.isLoading = true;
       this.sort = "random";
       this.page = 1;
       fetch(`${this.search}?sorting=random`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        });
+        }).finally(() => this.isLoading = false);
     },
     fetchLatest() {
       this.start = "";
+      this.startPage = false;
+      this.isLoading = true;
       this.filteredSearch = "";
       this.sort = "date_added";
       this.page = 1;
@@ -236,7 +247,7 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        });
+        }).finally(() => this.isLoading = false);
     },
 
     fetchSearch(e) {
@@ -255,6 +266,7 @@ export default {
       }
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
+        this.isLoading = true;
         this.start = "";
         this.startPage = false;
         this.notFound = true;
@@ -267,7 +279,8 @@ export default {
           .then((res) => res.json())
           .then((json) => {
             this.filteredSearch = json.data;
-          });
+          }).finally(() => this.isLoading = false);
+          
       }
     },
     fetchNext() {
@@ -285,6 +298,7 @@ export default {
         this.exactRes = [];
       }
       let categories = categoriesArr.join("");
+      this.isLoading = true;
       this.imageCounter = 0;
       this.page++;
       this.start = "";
@@ -295,7 +309,7 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        });
+        }).finally(() => this.isLoading = false);
     },
     fetchPrev() {
       let general = this.checkedGeneral;
@@ -312,6 +326,7 @@ export default {
         this.exactRes = [];
       }
       let categories = categoriesArr.join("");
+      this.isLoading = true;
       this.page--;
       this.start = "";
       this.filteredSearch = "";
@@ -321,7 +336,7 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        });
+        }) .finally(() => this.isLoading = false);
     },
   },
   computed: {},
@@ -370,7 +385,7 @@ export default {
 }
 
 .main__container {
-  max-width: 1200px;
+  max-width: 100%;
 }
 .filters-flex {
   padding-top: 20px;
@@ -483,21 +498,24 @@ export default {
   background-size: cover;
   background-position: center;
   padding-bottom: 150px;
-  padding-left: 10px;
-  padding-right: 10px;
   position: relative;
-  max-width: 1200px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .not-found {
   max-width: 1200px;
   box-sizing: border-box;
   margin: 0 auto;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 150px;
+  padding-bottom: 150px;
   background-color: #212121;
   border: 5px solid #d1c4e9;
 }
 .not-found-text {
+  display: block;
   font-size: 50px;
+}
+.container {
+  padding: 0px;
 }
 </style>

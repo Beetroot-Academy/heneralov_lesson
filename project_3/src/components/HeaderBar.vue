@@ -48,6 +48,7 @@ export default {
   color: red;
 }
 .header {
+  padding: 0;
 }
 .header-bg {
   width: 100%;
