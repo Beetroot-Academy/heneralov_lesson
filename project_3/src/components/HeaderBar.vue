@@ -4,6 +4,7 @@
     <header class="header" fixed>
       <div class="header-wrapper">
         <ul class="header-buttons">
+          <li><a href="#">Home</a> </li>
           <li>
             <v-btn dark class="latest-btn" @click="$emit('fetchLatest')"
               >Latest</v-btn

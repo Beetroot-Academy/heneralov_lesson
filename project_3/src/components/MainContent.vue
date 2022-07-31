@@ -140,7 +140,9 @@
       </div>
     </div>
     <div v-if="startPage" class="main-content">
-      <Splide :options="options" :has-track="true">
+      <span class="main-content-text-one">Search and download</span>
+      <span class="main-content-text-two">wallpapers for free</span>
+      <Splide :options="options" >
     <SplideSlide>
       <img src="../assets/splide-img1.jpg" alt="Sample 1">
     </SplideSlide>
@@ -154,6 +156,7 @@
       <img src="../assets/splide-img4.jpg" alt="Sample 2">
     </SplideSlide>
   </Splide>
+  
     </div>
     <div v-else-if="isLoading" class="loading-block">
       <div class="lds-dual-ring"></div>
@@ -187,7 +190,7 @@ export default {
         perPage: 1,
         perMove: 1,
         autoplay: true,
-        interval: 2500,
+        interval: 4000,
         width: '100vw',
         height: '80vh',
         pauseOnHover: false,
@@ -405,7 +408,7 @@ export default {
   color: white;
   padding: 10px;
   background-color: #212121;
-  width: 400px;
+  width: 600px;
 }
 .search-wrapper {
   padding-top: 100px;
@@ -550,6 +553,31 @@ export default {
 }
 .main-content {
   margin: 0 auto;
+  position: relative;
   border: 5px solid #212121;
+}
+.main-content-text-one {
+  color: white;
+  display: block;
+  text-transform: uppercase;
+  font-size: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40%;
+}
+.main-content-text-two {
+  color: white;
+  display: block;
+  text-transform: uppercase;
+  font-size: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%;
 }
 </style>

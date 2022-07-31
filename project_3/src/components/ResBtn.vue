@@ -519,7 +519,7 @@ methods: {
 .resolution-dropdown {
   position: absolute;
   right: 0px;
-  bottom: 5px;
+  bottom: 50px;
   padding: 0px 15px;
   
   width: fit-content;
