@@ -1,49 +1,10 @@
 <template>
   <v-app>
-    <MainContent />
-    <FooterBlock :icons="icons" />
+    <router-view />
   </v-app>
 </template>
 
-<script>
-import MainContent from "./components/MainContent.vue";
-import FooterBlock from "./components/FooterBlock.vue";
-export default {
-  components: {
-    MainContent,
-    FooterBlock,
-  },
-  data() {
-    return {
-      /* url_base: 'https://wallhaven.cc/api/v1', */
-      query: "",
-      openRes: false,
-      checkedGeneral: true,
-      checkedAnime: true,
-      checkedPeople: true,
-      sort: "date_added",
-      order: "desc",
-      topSort: "1m",
-      atleast: false,
-      exact: false,
-      resValue: "",
-      exactRes: [],
-      start: [],
-      filteredSearch: [],
-      search: "https://wallhaven.cc/api/v1/search",
-      icons: [
-        "mdi-facebook",
-        "mdi-twitter",
-        "mdi-reddit",
-        "mdi-instagram",
-        "mdi-linkedin",
-      ],
-    };
-  },
 
-  methods: {},
-};
-</script>
 <style>
 @import url("/src/assets/reset.css");
 #app {

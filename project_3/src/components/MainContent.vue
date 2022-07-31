@@ -218,6 +218,7 @@ export default {
       topSort: "1m",
       start: [],
       page: 1,
+      queryValue: "",
       filteredSearch: [],
       arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
@@ -245,6 +246,7 @@ export default {
       this.exactRes = value;
     },
     fetchTop() {
+      this.query = "";
       this.start = "";
       this.startPage = false;
       this.isLoading = true;
@@ -258,6 +260,7 @@ export default {
         }).finally(() => this.isLoading = false);
     },
     fetchRandom() {
+      this.query = "";
       this.start = "";
       this.startPage = false;
       this.filteredSearch = "";
@@ -271,6 +274,7 @@ export default {
         }).finally(() => this.isLoading = false);
     },
     fetchLatest() {
+      this.query = "";
       this.start = "";
       this.startPage = false;
       this.isLoading = true;
@@ -300,6 +304,7 @@ export default {
       }
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
+        this.queryValue = this.query
         this.isLoading = true;
         this.start = "";
         this.startPage = false;
