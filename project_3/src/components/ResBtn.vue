@@ -4,7 +4,7 @@
           @click="openRes = !openRes"
           class="res-btn"
           color="#212121"
-          >Resolution {{resValue}} {{exactRes}}</v-btn
+          >Resolution</v-btn
         >
         <div v-if="openRes" v-click-outside="onClickOutside" class="resolution-dropdown">
           <div class="input-wrapper">

@@ -115,14 +115,14 @@ a {
 }
 .lds-dual-ring {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
 }
 .lds-dual-ring:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   margin: 8px;
   border-radius: 50%;
   border: 6px solid #fff;
@@ -136,5 +136,11 @@ a {
   100% {
     transform: rotate(360deg);
   }
+}
+.loading-block {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: #212121;
+  border: 5px solid #d1c4e9;
 }
 </style>
