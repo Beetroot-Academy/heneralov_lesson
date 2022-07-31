@@ -45,14 +45,14 @@ export default {
 };
 </script>
 <style>
-@import url("./assets/reset.css");
+@import url("/src/assets/reset.css");
 #app {
   background-color: #21D4FD;
   background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0px;
   text-align: center;
   color: white;
 }
@@ -72,6 +72,11 @@ export default {
    
  
   
+}
+@media screen and (max-width: 768px) {
+  .img {
+    width: 100px;
+  }
 }
 .active {
   color: green;
@@ -106,5 +111,30 @@ a {
   position: relative;
   width: 1000px;
   height: 100%;
+  object-fit: contain;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
