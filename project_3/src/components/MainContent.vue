@@ -140,9 +140,18 @@
       </div>
     </div>
     <div v-if="startPage" class="main-content">
-      <span class="test">Kekis Kekis</span>
+      <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
+    <SplideSlide>
+      <img src="/src/assets/splide-img1" alt="Sample 1">
+    </SplideSlide>
+    <SplideSlide>
+      <img src="/src/assets/splide-img2" alt="Sample 2">
+    </SplideSlide>
+  </Splide>
     </div>
-    <div v-else-if="isLoading" class="lds-dual-ring"></div>
+    <div v-else-if="isLoading" class="loading-block">
+      <div class="lds-dual-ring"></div>
+    </div>
     <div class="not-found" v-else-if="!filteredSearch.length">
       <span class="not-found-text">Images for your request are not found</span>
       <span class="not-found-text">Try again!</span>
@@ -155,8 +164,11 @@
 <script>
 import HeaderBar from "./HeaderBar.vue";
 import ResBtn from "./ResBtn.vue";
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
 export default {
   components: {
+    Splide,
+    SplideSlide,
     HeaderBar,
     ResBtn,
   },
@@ -503,7 +515,7 @@ export default {
   box-sizing: border-box;
 }
 .not-found {
-  max-width: 1200px;
+  max-width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
   padding-top: 150px;
