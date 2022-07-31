@@ -140,12 +140,18 @@
       </div>
     </div>
     <div v-if="startPage" class="main-content">
-      <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
+      <Splide :options="options" :has-track="true">
     <SplideSlide>
-      <img src="/src/assets/splide-img1" alt="Sample 1">
+      <img src="../assets/splide-img1.jpg" alt="Sample 1">
     </SplideSlide>
     <SplideSlide>
-      <img src="/src/assets/splide-img2" alt="Sample 2">
+      <img src="../assets/splide-img2.jpg" alt="Sample 2">
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../assets/splide-img3.png" alt="Sample 2">
+    </SplideSlide>
+    <SplideSlide>
+      <img src="../assets/splide-img4.jpg" alt="Sample 2">
     </SplideSlide>
   </Splide>
     </div>
@@ -164,7 +170,7 @@
 <script>
 import HeaderBar from "./HeaderBar.vue";
 import ResBtn from "./ResBtn.vue";
-import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import { Splide, SplideSlide} from '@splidejs/vue-splide';
 export default {
   components: {
     Splide,
@@ -176,6 +182,19 @@ export default {
   props: [],
   data() {
     return {
+      options: {
+        type: 'loop',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 2500,
+        width: '100vw',
+        height: '80vh',
+        pauseOnHover: false,
+        rewind: true,
+        arrows: false,
+        pagination: false,
+      },
       startPage: true,
       isLoading: false,
       notFound: false,
@@ -389,8 +408,8 @@ export default {
   width: 400px;
 }
 .search-wrapper {
-  padding-top: 40px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .test {
   font-size: 300px;
@@ -509,7 +528,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-bottom: 150px;
   position: relative;
   max-width: 100%;
   box-sizing: border-box;
@@ -529,5 +547,9 @@ export default {
 }
 .container {
   padding: 0px;
+}
+.main-content {
+  margin: 0 auto;
+  border: 5px solid #212121;
 }
 </style>
