@@ -246,7 +246,7 @@ export default {
       this.exactRes = value;
     },
     fetchTop() {
-      this.query = "";
+      this.queryValue = "";
       this.start = "";
       this.startPage = false;
       this.isLoading = true;
@@ -260,7 +260,7 @@ export default {
         }).finally(() => this.isLoading = false);
     },
     fetchRandom() {
-      this.query = "";
+      this.queryValue = "";
       this.start = "";
       this.startPage = false;
       this.filteredSearch = "";
@@ -274,7 +274,7 @@ export default {
         }).finally(() => this.isLoading = false);
     },
     fetchLatest() {
-      this.query = "";
+      this.queryValue = "";
       this.start = "";
       this.startPage = false;
       this.isLoading = true;
@@ -313,7 +313,7 @@ export default {
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+          `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
@@ -343,7 +343,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
@@ -370,7 +370,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.query}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
