@@ -47,8 +47,7 @@ export default {
 <style>
 @import url("/src/assets/reset.css");
 #app {
-  background-color: #21D4FD;
-  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  background-color: #212121;
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
