@@ -16,7 +16,7 @@
       </v-card-title>
 
       <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} - <strong>Kekis</strong>
+        {{ new Date().getFullYear() }}<strong></strong>
       </v-card-text>
     </v-card>
   </v-footer>

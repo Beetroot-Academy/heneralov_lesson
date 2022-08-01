@@ -564,7 +564,6 @@ export default {
 .main-content-text-one {
   color: white;
   display: block;
-  text-transform: uppercase;
   font-size: 50px;
   position: absolute;
   z-index: 1;
@@ -576,7 +575,6 @@ export default {
 .main-content-text-two {
   color: white;
   display: block;
-  text-transform: uppercase;
   font-size: 50px;
   position: absolute;
   z-index: 1;
