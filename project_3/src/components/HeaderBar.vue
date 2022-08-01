@@ -1,10 +1,13 @@
 <template>
 <section class="header-bg">
   <div>
-    <header class="header" fixed>
+    <header class="header">
       <div class="header-wrapper">
         <ul class="header-buttons">
+          <li><a href="/">Home</a> </li>
           <li><a href="/about">About</a> </li>
+          <li><a href="/faq">FAQ</a> </li>
+          <li><a href="/contact">Contact</a> </li>
           <li>
             <v-btn dark class="latest-btn" @click="$emit('fetchLatest')"
               >Latest</v-btn
@@ -49,12 +52,12 @@ export default {
   color: red;
 }
 .header {
-  padding: 0;
+  
 }
 .header-bg {
   width: 100%;
   margin: 0 auto;
-  background-color: #212121;
+  background-color: #263238;
 }
 .header-wrapper {
   display: flex;
