@@ -114,7 +114,7 @@ export default {
 .faq__content {
   padding-top: 50px;
   padding-bottom: 50px;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: start;
 }
@@ -138,6 +138,19 @@ export default {
 .faq__text-block {
   padding-top: 20px;
   padding-left:20px ;
+}
+@media screen and (max-width: 768px) {
+  .faq__main-title {
+  font-size: 36px;
+}
+.faq__title {
+  padding-left: 15px;
+  font-size: 28px;
+}
+
+.faq__text {
+  font-size: 16px;
+}
 }
 
 </style>

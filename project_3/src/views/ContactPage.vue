@@ -77,16 +77,7 @@ export default {
 </script>
 
 <style scoped>
-.header-wrapper {
-  background-color: #263238;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0px;
-}
-.nav-list {
-  display: flex;
-  gap: 20px;
-}
+
 .contact-content {
   width: 700px;
   margin: 0 auto;
@@ -174,4 +165,45 @@ export default {
 .form__message:focus {
   opacity: 1;
 }
+@media screen and (max-width: 768px) {
+  .contact-content {
+  width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  color: #212121;
+  padding: 0px 30px;
+  padding-top:30px ;
+  padding-bottom: 30px;
+}
+.form__nameinput {
+  width: 140px;
+}
+.form__phoneinput {
+  width: 140px;
+}
+.form__mailinput {
+  width: 140px;
+}
+}
+@media screen and (max-width: 320px) {
+  .contact-content {
+  width: 280px;
+  margin: 0 auto;
+  background-color: white;
+  color: #212121;
+  padding: 0px 10px;
+  padding-top:20px ;
+  padding-bottom: 20px;
+}
+.form__nameinput {
+  width: 100px;
+}
+.form__phoneinput {
+  width: 100px;
+}
+.form__mailinput {
+  width: 100px;
+}
+}
+
 </style>

@@ -569,5 +569,10 @@ methods: {
   background-color:#FF8F00;
   transition: 0.5s;
 }
+@media screen and (max-width: 768px) {
+.resolution-block {
+  padding-right: 0px;
+}
+}
 
 </style>
