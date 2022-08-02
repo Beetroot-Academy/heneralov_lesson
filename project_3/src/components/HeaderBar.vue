@@ -7,10 +7,10 @@
            <a href="/"> <img class="logo-img" src="../assets/logo.png" alt=""></a>
           </div>
         <ul class="header-nav">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a> </li>
-          <li class="nav-item"><a class="nav-link" href="/about">About</a> </li>
-          <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a> </li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a> </li>
+          <li class="nav-item"><router-link class="nav-link" :to="{path:'/'}">Home</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link" :to="{path:'/about'}">About</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link" :to="{path:'/faq'}">FAQ</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link" :to="{path:'/contact'}">Contact</router-link> </li>
         </ul>
         <div class="burger-wrapper">
         <div @click="openNav = !openNav" class="burger-block">
@@ -18,10 +18,10 @@
             <span class="bar"></span>
             <span class="bar"></span>
             <ul v-if="openNav" class="burger-nav">
-          <li class="burger-item"><a class="nav-link" href="/">Home</a> </li>
-          <li class="burger-item"><a class="nav-link" href="/about">About</a> </li>
-          <li class="burger-item"><a class="nav-link" href="/faq">FAQ</a> </li>
-          <li class="burger-item"><a class="nav-link" href="/contact">Contact</a> </li>
+          <li class="burger-item"><router-link class="nav-link" :to="{path:'/'}">Home</router-link> </li>
+          <li class="burger-item"><router-link class="nav-link" :to="{path:'/about'}">About</router-link> </li>
+          <li class="burger-item"><router-link class="nav-link" :to="{path:'/faq'}">FAQ</router-link> </li>
+          <li class="burger-item"><router-link class="nav-link" :to="{path:'/contact'}">Contact</router-link> </li>
         </ul>
           </div>
           </div>
