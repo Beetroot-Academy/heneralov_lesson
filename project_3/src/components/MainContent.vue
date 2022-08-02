@@ -320,7 +320,7 @@ export default {
       this.filteredSearch = "";
       this.sort = "toplist";
       this.page = 1;
-      fetch(`${this.search}?sorting=toplist`)
+      fetch(`http://localhost:8080/api/v1/search?sorting=toplist`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -335,7 +335,7 @@ export default {
       this.isLoading = true;
       this.sort = "random";
       this.page = 1;
-      fetch(`${this.search}?sorting=random`)
+      fetch(`http://localhost:8080/api/v1/search?sorting=random`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -350,7 +350,7 @@ export default {
       this.filteredSearch = "";
       this.sort = "date_added";
       this.page = 1;
-      fetch(`${this.search}?sorting=date_added`)
+      fetch(`http://localhost:8080/api/v1/search?sorting=date_added`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -397,7 +397,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `http://localhost:8080/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
@@ -411,7 +411,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `http://localhost:8080/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
