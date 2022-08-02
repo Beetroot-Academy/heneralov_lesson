@@ -262,6 +262,7 @@ export default {
       sortValue: "",
       topSortValue:"",
       orderValue:"",
+      categories: "",
       filteredSearch: [],
       arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
@@ -342,8 +343,8 @@ export default {
       general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
       anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
       people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      let categories = categoriesArr.join("");
       if (e.key == "Enter") {
+        this.categories = categoriesArr.join("");
         this.queryValue = this.query;
         this.exactResValue = this.exactRes;
         this.sortValue = this.sort;
@@ -357,7 +358,7 @@ export default {
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+          `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
@@ -367,21 +368,13 @@ export default {
       }
     },
     fetchNext() {
-      let general = this.checkedGeneral;
-      let anime = this.checkedAnime;
-      let people = this.checkedPeople;
-      let categoriesArr = [general, anime, people];
-      general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
-      anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
-      people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      let categories = categoriesArr.join("");
       this.isLoading = true;
       this.imageCounter = 0;
       this.page++;
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
@@ -390,20 +383,12 @@ export default {
         .finally(() => (this.isLoading = false));
     },
     fetchPrev() {
-      let general = this.checkedGeneral;
-      let anime = this.checkedAnime;
-      let people = this.checkedPeople;
-      let categoriesArr = [general, anime, people];
-      general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
-      anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
-      people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      let categories = categoriesArr.join("");
       this.isLoading = true;
       this.page--;
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
