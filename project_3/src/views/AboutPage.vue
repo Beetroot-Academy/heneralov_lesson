@@ -111,4 +111,18 @@ export default {
   width: 100%;
   padding-top: 20px;
 }
+@media screen and (max-width: 768px) {
+  .about__main-title {
+  font-size: 36px;
+}
+.about__title {
+  font-size: 28px;
+}
+.about__main-text {
+  font-size: 20px;
+}
+.about__text {
+  font-size: 16px;
+}
+}
 </style>
