@@ -13,7 +13,7 @@
               type="radio"
               value="1"
               checked
-              id="atleast"
+              id="atleast" 
               name="res-type"
               class="res-switcher"
             />
@@ -564,6 +564,10 @@ methods: {
 }
 .checkbox-wrapper {
   display: flex;
+}
+.res-btn:hover {
+  background-color:#FF8F00;
+  transition: 0.5s;
 }
 
 </style>

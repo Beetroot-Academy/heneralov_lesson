@@ -469,7 +469,7 @@ export default {
 .categories-checkbox + label {
 }
 .categories-checkbox:checked + label {
-  background-color: #00c853;
+  background-color:  #00C853;
   transition: 0.3s;
 }
 .categories-checkbox:not(:checked) + label {
@@ -501,7 +501,7 @@ export default {
 }
 .select-sort:hover {
   cursor: pointer;
-  background-color: #263238;
+  background-color: #424242;
   transition: 0.5s;
 }
 .order {
@@ -523,7 +523,7 @@ export default {
   cursor: pointer;
 }
 .order-input:checked + label {
-  background-color: #00c853;
+  background-color: #00C853;
   transition: 0.3s;
 }
 .order-input:not(:checked) + label {
@@ -546,7 +546,7 @@ export default {
 }
 .top-range-sort:hover {
   cursor: pointer;
-  background-color: #263238;
+  background-color: #424242;
   transition: 0.5s;
 }
 .nextpage {
@@ -666,5 +666,92 @@ export default {
   top: 3%;
   left: 5%;
 }
+@media screen and (max-width: 1500px) {
+  .images-block {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+  .img {
+    max-width: 360px;
+    height: 260px;
+  }
+  
+}
+@media screen and (max-width: 1200px) {
+  .img {
+    max-width: 300px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .img {
+    max-width: 250px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .start-search-bar {
+    width: 600px;
+  }
+  .main-content-text-one {
+    font-size: 42px;
+  }
+  .main-content-text-two {
+    font-size: 42px;
+  }
+  .start-list {
+      gap: 60px;
+  }
+  .img {
+    max-width: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .images-block {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+  .start-buttons {
+    gap: 10px;
+  }
+  .start-btn {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+  .start-search-bar {
+    width: 450px;
+  }
+  .main-content-text-one {
+    font-size: 36px;
+  }
+  .main-content-text-two {
+    font-size: 36px;
+  }
+  .start-list {
+      gap: 30px;
+  }
+  .img {
+    max-width: 280px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .img {
+    max-width: 200px;
+  }
+  
+}
+@media screen and (max-width: 480px) {
+  .images-block {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+  .img {
+    max-width: 280px;
+  }
+}
+@media screen and (max-width: 320px) {
+
+}
+
 
 </style>
