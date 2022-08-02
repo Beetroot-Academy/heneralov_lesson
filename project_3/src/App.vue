@@ -95,11 +95,6 @@ a {
     transform: rotate(360deg);
   }
 }
-.loading-block {
-  padding-top: 150px;
-  padding-bottom: 150px;
-  background-color: #212121;
-  border: 5px solid #d1c4e9;
-}
+
 
 </style>

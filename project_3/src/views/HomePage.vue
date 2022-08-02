@@ -1,17 +1,14 @@
 <template>
   <div>
     <MainContent />
-    <FooterBlock :icons="icons" />
   </div>
 </template>
 
 <script>
 import MainContent from "../components/MainContent.vue";
-import FooterBlock from "../components/FooterBlock.vue";
 export default {
   components: {
     MainContent,
-    FooterBlock,
   },
   data() {
     return {
@@ -24,8 +21,6 @@ export default {
       sort: "date_added",
       order: "desc",
       topSort: "1m",
-      atleast: false,
-      exact: false,
       resValue: "",
       exactRes: [],
       start: [],
@@ -137,7 +132,6 @@ a {
   padding-top: 150px;
   padding-bottom: 150px;
   background-color: #212121;
-  border: 5px solid #d1c4e9;
 }
 
 

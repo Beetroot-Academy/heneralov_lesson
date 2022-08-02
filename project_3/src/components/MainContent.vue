@@ -202,11 +202,13 @@
       <span class="not-found-text">Images for your request are not found</span>
       <span class="not-found-text">Try again!</span>
     </div>
+    <FooterBlock v-if="!startPage" :icons="icons" />
   </main>
 </template>
 
 <script>
 import HeaderBar from "./HeaderBar.vue";
+import FooterBlock from "../components/FooterBlock.vue";
 import ResBtn from "./ResBtn.vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 export default {
@@ -215,6 +217,7 @@ export default {
     SplideSlide,
     HeaderBar,
     ResBtn,
+    FooterBlock,
   },
   name: "MainContent",
   props: [],
@@ -335,12 +338,6 @@ export default {
       general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
       anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
       people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      if (this.resType === "2") {
-        this.resValue = "";
-      }
-      if (this.resType === "1") {
-        this.exactRes = [];
-      }
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
         this.queryValue = this.query;
@@ -445,7 +442,6 @@ export default {
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  border: 5px solid #d1c4e9;
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: #212121;
@@ -589,7 +585,6 @@ export default {
   padding-top: 150px;
   padding-bottom: 150px;
   background-color: #212121;
-  border: 5px solid #d1c4e9;
 }
 .not-found-text {
   display: block;
