@@ -125,10 +125,16 @@
             />
           </div>
           <a v-if="page > 1" href="#scrolltop">
-            <v-btn color="#FF8F00" @click="fetchPrev" class="prevpage">Prev page</v-btn>
+            <v-btn color="#FF8F00" @click="fetchPrev" class="prevpage"
+              >Prev page</v-btn
+            >
           </a>
           <a href="#scrolltop">
-            <v-btn color="#FF8F00" v-if="imageCounter > 23" @click="fetchNext" class="nextpage"
+            <v-btn
+              color="#FF8F00"
+              v-if="imageCounter > 23"
+              @click="fetchNext"
+              class="nextpage"
               >Next page</v-btn
             >
           </a>
@@ -137,28 +143,44 @@
     </div>
     <div v-if="startPage" class="main-content">
       <div class="logo">
-         <a href="/"> <img class="logo-img" src="../assets/logo.png" alt=""></a>
-        </div>
+        <a href="/">
+          <img class="logo-img" src="../assets/logo.png" alt=""
+        /></a>
+      </div>
       <div class="start-nav-wrapper">
-          <nav class="start-nav">
-        <ul class="start-list">
-          <li class="start-item"><a class="start-link" href="/">Home</a> </li>
-          <li class="start-item"><a class="start-link" href="/about">About</a> </li>
-          <li class="start-item"><a class="start-link" href="/faq">FAQ</a> </li>
-          <li class="start-item"><a class="start-link" href="/contact">Contact</a> </li>
-        </ul>
-        <div class="burger-wrapper">
-        <div @click="openStartNav = !openStartNav" class="burger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <ul v-if="openStartNav" class="start-burger">
-          <li class="start-burger-item"><a class="start-link" href="/">Home</a> </li>
-          <li class="start-burger-item"><a class="start-link" href="/about">About</a> </li>
-          <li class="start-burger-item"><a class="start-link" href="/faq">FAQ</a> </li>
-          <li class="start-burger-item"><a class="start-link" href="/contact">Contact</a> </li>
-        </ul>
-          </div>
+        <nav class="start-nav">
+          <ul class="start-list">
+            <li class="start-item"><a class="start-link" href="/">Home</a></li>
+            <li class="start-item">
+              <a class="start-link" href="/about">About</a>
+            </li>
+            <li class="start-item">
+              <a class="start-link" href="/faq">FAQ</a>
+            </li>
+            <li class="start-item">
+              <a class="start-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+          <div class="burger-wrapper">
+            <div @click="openStartNav = !openStartNav" class="burger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <ul v-if="openStartNav" class="start-burger">
+                <li class="start-burger-item">
+                  <a class="start-link" href="/">Home</a>
+                </li>
+                <li class="start-burger-item">
+                  <a class="start-link" href="/about">About</a>
+                </li>
+                <li class="start-burger-item">
+                  <a class="start-link" href="/faq">FAQ</a>
+                </li>
+                <li class="start-burger-item">
+                  <a class="start-link" href="/contact">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
@@ -224,7 +246,7 @@ export default {
   data() {
     return {
       options: {
-        type: "loop",
+        type: "fade",
         perPage: 1,
         perMove: 1,
         autoplay: true,
@@ -241,6 +263,7 @@ export default {
       isLoading: false,
       notFound: false,
       imageCounter: 0,
+      apikey: "HtMJYGtEu0vazFoGPIP41D24AeqcWesI",
       query: "",
       openModal: false,
       selectedImgPath: "",
@@ -260,8 +283,8 @@ export default {
       queryValue: "",
       exactResValue: "",
       sortValue: "",
-      topSortValue:"",
-      orderValue:"",
+      topSortValue: "",
+      orderValue: "",
       categories: "",
       filteredSearch: [],
       arrowIcon: false,
@@ -340,9 +363,9 @@ export default {
       let anime = this.checkedAnime;
       let people = this.checkedPeople;
       let categoriesArr = [general, anime, people];
-      general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
-      anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
-      people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
+      !general ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
+      !anime ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
+      !people ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
       if (e.key == "Enter") {
         this.categories = categoriesArr.join("");
         this.queryValue = this.query;
@@ -358,11 +381,11 @@ export default {
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `${this.search}?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+          `http://localhost:8080/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
-            this.filteredSearch = json.data;
+            this.filteredSearch = json.data
           })
           .finally(() => (this.isLoading = false));
       }
@@ -460,7 +483,7 @@ export default {
 .categories-checkbox + label {
 }
 .categories-checkbox:checked + label {
-  background-color:  #00C853;
+  background-color: #00c853;
   transition: 0.3s;
 }
 .categories-checkbox:not(:checked) + label {
@@ -514,7 +537,7 @@ export default {
   cursor: pointer;
 }
 .order-input:checked + label {
-  background-color: #00C853;
+  background-color: #00c853;
   transition: 0.3s;
 }
 .order-input:not(:checked) + label {
@@ -572,37 +595,36 @@ export default {
   font-size: 50px;
 }
 .burger {
-    display: none;
-    height: 40px;
-    width: 40px;
-    flex-direction: column;
-    z-index: 3;
-    position: relative;
+  display: none;
+  height: 40px;
+  width: 40px;
+  flex-direction: column;
+  z-index: 3;
+  position: relative;
 }
 .bar {
-        display: block;
-        width: 30px;
-        height: 2px;
-        margin: 6px auto;
-        background-color: white;
-        transition: transform .2s ease-in;
-    }
-    .burger-wrapper {
-      position: absolute;
-      z-index: 1;
-      right: -20px;
-      top: -10px;
-      
-    }
-    .start-burger {
-      position: absolute;
-      z-index: 1;
-      right: 0px;
-      top: 40px;
-    }
-    .start-burger-item {
-      padding-bottom: 20px;
-    }
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  background-color: white;
+  transition: transform 0.2s ease-in;
+}
+.burger-wrapper {
+  position: absolute;
+  z-index: 1;
+  right: -20px;
+  top: -10px;
+}
+.start-burger {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 40px;
+}
+.start-burger-item {
+  padding-bottom: 20px;
+}
 .container {
   padding: 0px;
 }
@@ -678,8 +700,8 @@ export default {
   color: white;
 }
 .start-link:hover {
-  color: #FF8F00;
-  border-bottom:1px solid #FF8F00 ;
+  color: #ff8f00;
+  border-bottom: 1px solid #ff8f00;
   transition: 0.5s;
 }
 .logo {
@@ -690,29 +712,28 @@ export default {
 }
 @media screen and (max-width: 1500px) {
   .images-block {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
   .img {
     max-width: 360px;
     height: 260px;
   }
-  
 }
 @media screen and (max-width: 1200px) {
   .modal-container {
-        width: 900px;
-        padding-left: 40px;
-        padding-bottom: 20px;
-        padding-top:20px;
-        padding-right: 40px;     
-}
-.modal-img {
-  position: relative;
-  width: 800px;
-  height: 100%;
-  object-fit: contain;
-}
+    width: 900px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 40px;
+  }
+  .modal-img {
+    position: relative;
+    width: 800px;
+    height: 100%;
+    object-fit: contain;
+  }
   .img {
     max-width: 300px;
     height: 200px;
@@ -720,18 +741,18 @@ export default {
 }
 @media screen and (max-width: 1000px) {
   .modal-container {
-        width: 700px;
-        padding-left: 30px;
-        padding-bottom: 20px;
-        padding-top:20px;
-        padding-right: 30px;     
-}
-.modal-img {
-  position: relative;
-  width: 600px;
-  height: 100%;
-  object-fit: contain;
-}
+    width: 700px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 30px;
+  }
+  .modal-img {
+    position: relative;
+    width: 600px;
+    height: 100%;
+    object-fit: contain;
+  }
   .img {
     max-width: 250px;
   }
@@ -747,67 +768,64 @@ export default {
     font-size: 42px;
   }
   .start-list {
-      gap: 60px;
+    gap: 60px;
   }
   .img {
     max-width: 220px;
   }
-.categories-checkbox:checked + label,
-.categories-checkbox:not(:checked) + label {
-  padding: 5px;
-  border: 1px solid black;
-  margin-right: 5px;
-  border-radius: 8px;
-  font-size: 14px;
-}
-.order-input:checked + label,
-.order-input:not(:checked) + label {
-  padding: 4px;
-  border: 1px solid black;
-  margin-right: 5px;
-  border-radius: 8px;
-  font-size: 14px;
-}
-.order {
-  padding-left: 10px;
-}
-.top-range-sort {
-  padding: 2px;
-  font-size: 14px;
-}
-.select-sort {
-  padding: 2px;
-  font-size: 14px;
-  
-}
-
-
+  .categories-checkbox:checked + label,
+  .categories-checkbox:not(:checked) + label {
+    padding: 5px;
+    border: 1px solid black;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .order-input:checked + label,
+  .order-input:not(:checked) + label {
+    padding: 4px;
+    border: 1px solid black;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .order {
+    padding-left: 10px;
+  }
+  .top-range-sort {
+    padding: 2px;
+    font-size: 14px;
+  }
+  .select-sort {
+    padding: 2px;
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 768px) {
   .modal-container {
-        width: 600px;
-        padding-left: 30px;
-        padding-bottom: 20px;
-        padding-top:20px;
-        padding-right: 30px;     
-}
-.modal-img {
-  position: relative;
-  width: 500px;
-  height: 100%;
-  object-fit: contain;
-}
+    width: 600px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 30px;
+  }
+  .modal-img {
+    position: relative;
+    width: 500px;
+    height: 100%;
+    object-fit: contain;
+  }
   .images-block {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-.burger {
-  display: flex;
-  justify-content: right;
-}
-.start-list {
-  display: none;
-}
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .burger {
+    display: flex;
+    justify-content: right;
+  }
+  .start-list {
+    display: none;
+  }
   .start-buttons {
     gap: 10px;
   }
@@ -825,7 +843,7 @@ export default {
     font-size: 36px;
   }
   .start-list {
-      gap: 30px;
+    gap: 30px;
   }
   .img {
     max-width: 280px;
@@ -839,24 +857,22 @@ export default {
     gap: 30px;
   }
   .sort-filters {
-  justify-content: center;
-}
-.search-bar {
-  width: 450px;
-}
+    justify-content: center;
+  }
+  .search-bar {
+    width: 450px;
+  }
 }
 @media screen and (max-width: 600px) {
   .img {
     max-width: 200px;
   }
-  
 }
 @media screen and (max-width: 480px) {
-  
   .images-block {
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-}
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
   .img {
     max-width: 280px;
   }
@@ -877,19 +893,17 @@ export default {
 }
 @media screen and (max-width: 320px) {
   .modal-container {
-        width: 300px;
-        padding-left: 5px;
-        padding-bottom: 5px;
-        padding-top:5px;
-        padding-right: 5px;     
+    width: 300px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+  }
+  .modal-img {
+    position: relative;
+    width: 280px;
+    height: 100%;
+    object-fit: contain;
+  }
 }
-.modal-img {
-  position: relative;
-  width: 280px;
-  height: 100%;
-  object-fit: contain;
-}
-}
-
-
 </style>
