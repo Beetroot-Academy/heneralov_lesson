@@ -3,6 +3,9 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 module.exports = {
+  devServer: {
+    proxy: "https://wallhaven.cc"
+  },
   configureWebpack: {
   module: {
     rules: [
