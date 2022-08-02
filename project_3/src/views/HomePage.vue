@@ -65,8 +65,8 @@ export default {
 }
 .img {
   display: inline-block;
-  max-width: 300px;
-  height: 200px;
+  max-width: 320px;
+  height: 220px;
   background-color: black;
    
  
@@ -142,4 +142,6 @@ a {
   background-color: #212121;
   border: 5px solid #d1c4e9;
 }
+
+
 </style>

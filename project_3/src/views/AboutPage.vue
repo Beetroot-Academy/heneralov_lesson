@@ -1,17 +1,6 @@
 <template>
   <div class="about__section">
-    <header class="header">
-      <div class="header-wrapper">
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a class="nav-item" href="/">Home</a></li>
-            <li><a class="nav-item" href="/about">About</a></li>
-            <li><a class="nav-item" href="/faq">FAQ</a></li>
-            <li><a class="nav-item" href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <HeaderBar/>
     <div class="about__content">
       <h1 class="about__main-title">About wallhaven</h1>
       <p class="about__main-text">
@@ -72,6 +61,7 @@
 
 <script>
 import FooterBlock from "/src/components/FooterBlock.vue";
+import HeaderBar from "/src/components/HeaderBar.vue";
 export default {
   name: "AboutPage",
   props: {},
@@ -88,25 +78,19 @@ export default {
   },
   components: {
     FooterBlock,
+    HeaderBar,
   },
 };
 </script>
 
 <style scoped>
-.header-wrapper {
-  background-color: #263238;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0px;
-}
-.nav-list {
-  display: flex;
-  gap: 20px;
+.about-section {
+  width: 1200px;
 }
 .about__content {
   padding-top: 50px;
   padding-bottom: 50px;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: start;
 }
@@ -124,6 +108,7 @@ export default {
   font-size: 16px;
 }
 .about__text-block {
+  width: 100%;
   padding-top: 20px;
 }
 </style>

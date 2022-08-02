@@ -1,12 +1,8 @@
 <template>
   <main>
     <div class="container main__container" id="scrolltop">
-      <HeaderBar
-        @fetchLatest="fetchLatest"
-        @fetchRandom="fetchRandom"
-        @fetchTop="fetchTop"
-      />
-      <div class="search-section">
+      <HeaderBar v-if="!startPage" />
+      <div v-if="!startPage" class="search-section">
         <div class="search-wrapper">
           <input
             type="text"
@@ -125,14 +121,14 @@
               @loadstart="imageCounter++"
               class="img"
               :src="wallpaper.path"
-              alt=""
+              alt="wp"
             />
           </div>
           <a v-if="page > 1" href="#scrolltop">
-            <v-btn @click="fetchPrev" class="prevpage">Previous page</v-btn>
+            <v-btn color="#FF8F00" @click="fetchPrev" class="prevpage">Prev page</v-btn>
           </a>
           <a href="#scrolltop">
-            <v-btn v-if="imageCounter > 23" @click="fetchNext" class="nextpage"
+            <v-btn color="#FF8F00" v-if="imageCounter > 23" @click="fetchNext" class="nextpage"
               >Next page</v-btn
             >
           </a>
@@ -140,23 +136,51 @@
       </div>
     </div>
     <div v-if="startPage" class="main-content">
-      <span class="main-content-text-one">Search and download</span>
-      <span class="main-content-text-two">wallpapers for free</span>
-      <Splide :options="options" >
-    <SplideSlide>
-      <img src="../assets/splide-img1.jpg" alt="Sample 1">
-    </SplideSlide>
-    <SplideSlide>
-      <img src="../assets/splide-img2.jpg" alt="Sample 2">
-    </SplideSlide>
-    <SplideSlide>
-      <img src="../assets/splide-img3.png" alt="Sample 2">
-    </SplideSlide>
-    <SplideSlide>
-      <img src="../assets/splide-img4.jpg" alt="Sample 2">
-    </SplideSlide>
-  </Splide>
-  
+      <div class="logo">
+         <a href="/"> <img class="logo-img" src="../assets/logo.png" alt=""></a>
+        </div>
+      <div class="start-nav-wrapper">
+          <nav class="start-nav">
+        <ul class="start-list">
+          <li class="start-item"><a class="start-link" href="/">Home</a> </li>
+          <li class="start-item"><a class="start-link" href="/about">About</a> </li>
+          <li class="start-item"><a class="start-link" href="/faq">FAQ</a> </li>
+          <li class="start-item"><a class="start-link" href="/contact">Contact</a> </li>
+        </ul>
+        </nav>
+      </div>
+      <div class="start-page">
+        <span class="main-content-text-one">Search and download</span>
+        <span class="main-content-text-two">wallpapers for free</span>
+        <div class="start-buttons">
+          <button class="start-btn" @click="fetchLatest">Latest</button>
+          <button @click="fetchRandom" class="start-btn">Random</button>
+          <button @click="fetchTop" class="start-btn">Toplist</button>
+        </div>
+        <div class="start-search-wrapper">
+          <input
+            type="text"
+            class="start-search-bar"
+            placeholder="Search..."
+            v-model="query"
+            @keypress="fetchSearch"
+          />
+        </div>
+      </div>
+      <Splide :options="options">
+        <SplideSlide>
+          <img src="../assets/splide-img1.jpg" alt="Sample 1" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="../assets/splide-img2.png" alt="Sample 2" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="../assets/splide-img3.png" alt="Sample 2" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="../assets/splide-img4.jpg" alt="Sample 2" />
+        </SplideSlide>
+      </Splide>
     </div>
     <div v-else-if="isLoading" class="loading-block">
       <div class="lds-dual-ring"></div>
@@ -165,15 +189,13 @@
       <span class="not-found-text">Images for your request are not found</span>
       <span class="not-found-text">Try again!</span>
     </div>
-    
-    
   </main>
 </template>
 
 <script>
 import HeaderBar from "./HeaderBar.vue";
 import ResBtn from "./ResBtn.vue";
-import { Splide, SplideSlide} from '@splidejs/vue-splide';
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
 export default {
   components: {
     Splide,
@@ -186,13 +208,13 @@ export default {
   data() {
     return {
       options: {
-        type: 'loop',
+        type: "loop",
         perPage: 1,
         perMove: 1,
         autoplay: true,
         interval: 4000,
-        width: '100vw',
-        height: '80vh',
+        width: "100vw",
+        height: "100vh",
         pauseOnHover: false,
         rewind: true,
         arrows: false,
@@ -257,7 +279,8 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        }).finally(() => this.isLoading = false);
+        })
+        .finally(() => (this.isLoading = false));
     },
     fetchRandom() {
       this.queryValue = "";
@@ -271,7 +294,8 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        }).finally(() => this.isLoading = false);
+        })
+        .finally(() => (this.isLoading = false));
     },
     fetchLatest() {
       this.queryValue = "";
@@ -285,7 +309,8 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        }).finally(() => this.isLoading = false);
+        })
+        .finally(() => (this.isLoading = false));
     },
 
     fetchSearch(e) {
@@ -304,7 +329,7 @@ export default {
       }
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
-        this.queryValue = this.query
+        this.queryValue = this.query;
         this.isLoading = true;
         this.start = "";
         this.startPage = false;
@@ -318,8 +343,8 @@ export default {
           .then((res) => res.json())
           .then((json) => {
             this.filteredSearch = json.data;
-          }).finally(() => this.isLoading = false);
-          
+          })
+          .finally(() => (this.isLoading = false));
       }
     },
     fetchNext() {
@@ -348,7 +373,8 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        }).finally(() => this.isLoading = false);
+        })
+        .finally(() => (this.isLoading = false));
     },
     fetchPrev() {
       let general = this.checkedGeneral;
@@ -375,7 +401,8 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
-        }) .finally(() => this.isLoading = false);
+        })
+        .finally(() => (this.isLoading = false));
     },
   },
   computed: {},
@@ -402,8 +429,8 @@ export default {
   display: grid;
   margin: 0 auto;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   border: 5px solid #d1c4e9;
   padding-top: 75px;
   padding-bottom: 75px;
@@ -418,9 +445,6 @@ export default {
 .search-wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
-}
-.test {
-  font-size: 300px;
 }
 
 .main__container {
@@ -477,6 +501,8 @@ export default {
 }
 .select-sort:hover {
   cursor: pointer;
+  background-color: #263238;
+  transition: 0.5s;
 }
 .order {
   padding-left: 20px;
@@ -520,16 +546,18 @@ export default {
 }
 .top-range-sort:hover {
   cursor: pointer;
+  background-color: #263238;
+  transition: 0.5s;
 }
 .nextpage {
   position: absolute;
   bottom: 20px;
-  right: 50px;
+  right: 2%;
 }
 .prevpage {
   position: absolute;
   bottom: 20px;
-  left: 50px;
+  left: 2%;
 }
 .search-section {
   background-image: url("../assets/bg-image.jpg");
@@ -559,28 +587,84 @@ export default {
 .main-content {
   margin: 0 auto;
   position: relative;
-  border: 5px solid #212121;
+}
+.start-buttons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.start-btn {
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid #ff8f00;
+  background: transparent;
+  padding: 15px 45px;
+}
+.start-btn:hover {
+  background-color: #ff8f00;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.start-page {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.start-search-bar {
+  color: white;
+  padding: 15px;
+  background-color: #212121;
+  width: 800px;
+}
+.start-search-wrapper {
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .main-content-text-one {
   color: white;
   display: block;
   font-size: 50px;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 40%;
 }
 .main-content-text-two {
   color: white;
   display: block;
   font-size: 50px;
+}
+.start-nav-wrapper {
   position: absolute;
   z-index: 1;
-  left: 0;
-  right: 0;
+  right: 10%;
   bottom: 0;
-  top: 50%;
+  left: 0;
+  top: 5%;
 }
+.start-list {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  justify-content: right;
+}
+.start-link {
+  color: white;
+}
+.start-link:hover {
+  color: #FF8F00;
+  border-bottom:1px solid #FF8F00 ;
+  transition: 0.5s;
+}
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: 3%;
+  left: 5%;
+}
+
 </style>
