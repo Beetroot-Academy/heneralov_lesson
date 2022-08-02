@@ -33,11 +33,9 @@
  
   
 }
-@media screen and (max-width: 768px) {
-  .img {
-    width: 100px;
-  }
-}
+
+
+
 .active {
   color: green;
 }
