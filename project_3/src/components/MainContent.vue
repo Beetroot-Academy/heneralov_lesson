@@ -258,6 +258,10 @@ export default {
       start: [],
       page: 1,
       queryValue: "",
+      exactResValue: "",
+      sortValue: "",
+      topSortValue:"",
+      orderValue:"",
       filteredSearch: [],
       arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
@@ -341,15 +345,19 @@ export default {
       let categories = categoriesArr.join("");
       if (e.key == "Enter") {
         this.queryValue = this.query;
+        this.exactResValue = this.exactRes;
+        this.sortValue = this.sort;
+        this.topSortValue = this.topSort;
         this.isLoading = true;
         this.start = "";
         this.startPage = false;
+        this.orderValue = this.order;
         this.notFound = true;
         this.imageCounter = 0;
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+          `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
@@ -366,12 +374,6 @@ export default {
       general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
       anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
       people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      if (this.resType === "2") {
-        this.resValue = "";
-      }
-      if (this.resType === "1") {
-        this.exactRes = [];
-      }
       let categories = categoriesArr.join("");
       this.isLoading = true;
       this.imageCounter = 0;
@@ -379,7 +381,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
@@ -395,19 +397,13 @@ export default {
       general === false ? (categoriesArr[0] = 0) : (categoriesArr[0] = 1);
       anime === false ? (categoriesArr[1] = 0) : (categoriesArr[1] = 1);
       people === false ? (categoriesArr[2] = 0) : (categoriesArr[2] = 1);
-      if (this.resType === "2") {
-        this.resValue = "";
-      }
-      if (this.resType === "1") {
-        this.exactRes = [];
-      }
       let categories = categoriesArr.join("");
       this.isLoading = true;
       this.page--;
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `${this.search}?q=${this.queryValue}&categories=${categories}&atleast=${this.resValue}&resolutions=${this.exactRes}&sorting=${this.sort}&topRange=${this.topSort}&order=${this.order}&page=${this.page}`
+        `${this.search}?q=${this.queryValue}&categories=${categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
