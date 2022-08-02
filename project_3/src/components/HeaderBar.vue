@@ -3,26 +3,20 @@
   <div>
     <header class="header">
       <div class="header-wrapper">
-        <ul class="header-buttons">
-          <li><a href="/">Home</a> </li>
-          <li><a href="/about">About</a> </li>
-          <li><a href="/faq">FAQ</a> </li>
-          <li><a href="/contact">Contact</a> </li>
-          <li>
-            <v-btn dark class="latest-btn" @click="$emit('fetchLatest')"
-              >Latest</v-btn
-            >
-          </li>
-          <li>
-            <v-btn dark @click="$emit('fetchRandom')" class="random-btn"
-              >Random</v-btn
-            >
-          </li>
-          <li>
-            <v-btn dark @click="$emit('fetchTop')" class="toplist-btn"
-              >Toplist</v-btn
-            >
-          </li>
+        <div class="logo">
+           <a href="/"> <img class="logo-img" src="../assets/logo.png" alt=""></a>
+          </div>
+        <ul class="header-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a> </li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a> </li>
+          <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a> </li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a> </li>
+        </ul>
+        <ul class="header-social">
+          <li class="social-item"><a class="social-link" href=""> <v-icon class="social-icon">mdi-facebook</v-icon> </a></li>
+          <li class="social-item"><a class="social-link" href=""> <v-icon class="social-icon">mdi-twitter</v-icon> </a></li>
+          <li class="social-item"><a class="social-link" href=""> <v-icon class="social-icon">mdi-instagram</v-icon> </a></li>
+          <li class="social-item"><a class="social-link" href=""> <v-icon class="social-icon">mdi-linkedin</v-icon> </a></li>
         </ul>
       </div>
     </header>
@@ -48,9 +42,7 @@ export default {
 </script>
 
 <style scoped>
-.v-btn {
-  color: red;
-}
+
 .header {
   
 }
@@ -64,8 +56,36 @@ export default {
   justify-content: space-between;
   padding: 10px 0px;
 }
-.header-buttons {
+.header-nav {
+  padding-right: 50px;
+  padding-top:15px ;
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  gap: 50px;
+}
+.header-social {
+  display: flex;
+  flex-direction: row;
+  padding-top:15px ;
+  padding-right: 50px;
+  gap: 50px;
+}
+.nav-link {
+  color: white;
+}
+.nav-link:hover {
+  color: #FF8F00;
+  border-bottom:1px solid #FF8F00 ;
+  transition: 0.5s;
+}
+.social-icon {
+  color: white;
+}
+.social-icon:hover {
+  color: #FF8F00;
+  transition: 0.5s;
+}
+.logo {
+  padding-left: 50px;
 }
 </style>

@@ -1,17 +1,6 @@
 <template>
   <div class="contact-section">
-    <header class="header">
-      <div class="header-wrapper">
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a class="nav-item" href="/">Home</a></li>
-            <li><a class="nav-item" href="/about">About</a></li>
-            <li><a class="nav-item" href="/faq">FAQ</a></li>
-            <li><a class="nav-item" href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <HeaderBar/>
     <div class="contact-wrapper">
     <div class="contact-content">
       <h2 class="contact-title">Contact Us!</h2>
@@ -63,6 +52,7 @@
 
 <script>
 import FooterBlock from "/src/components/FooterBlock.vue";
+import HeaderBar from "/src/components/HeaderBar.vue";
 export default {
   name: "ContactPage",
   data() {
@@ -81,6 +71,7 @@ export default {
   },
   components: {
     FooterBlock,
+    HeaderBar,
   },
 };
 </script>
