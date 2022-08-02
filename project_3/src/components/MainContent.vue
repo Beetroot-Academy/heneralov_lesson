@@ -150,15 +150,15 @@
       <div class="start-nav-wrapper">
         <nav class="start-nav">
           <ul class="start-list">
-            <li class="start-item"><a class="start-link" href="/">Home</a></li>
+            <li class="start-item"><router-link class="start-link" :to="{path:'/'}">Home</router-link></li>
             <li class="start-item">
-              <a class="start-link" href="/about">About</a>
+              <router-link class="start-link" :to="{path:'/about'}">About</router-link>
             </li>
             <li class="start-item">
-              <a class="start-link" href="/faq">FAQ</a>
+              <router-link class="start-link" :to="{path:'/faq'}">FAQ</router-link>
             </li>
             <li class="start-item">
-              <a class="start-link" href="/contact">Contact</a>
+              <router-link class="start-link" :to="{path:'/contact'}">Contact</router-link>
             </li>
           </ul>
           <div class="burger-wrapper">
@@ -168,16 +168,16 @@
               <span class="bar"></span>
               <ul v-if="openStartNav" class="start-burger">
                 <li class="start-burger-item">
-                  <a class="start-link" href="/">Home</a>
+                  <router-link class="start-link" :to="{path:'/'}">Home</router-link>
                 </li>
                 <li class="start-burger-item">
-                  <a class="start-link" href="/about">About</a>
+                  <router-link class="start-link" :to="{path:'/about'}">About</router-link>
                 </li>
                 <li class="start-burger-item">
-                  <a class="start-link" href="/faq">FAQ</a>
+                  <router-link class="start-link" :to="{path:'/faq'}">FAQ</router-link>
                 </li>
                 <li class="start-burger-item">
-                  <a class="start-link" href="/contact">Contact</a>
+                  <router-link class="start-link" :to="{path:'/contact'}">Contact</router-link>
                 </li>
               </ul>
             </div>
