@@ -322,7 +322,7 @@ export default {
       this.sortValue = "toplist";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?categories=111&sorting=toplist`)
+      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=toplist`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -339,7 +339,7 @@ export default {
       this.sortValue = "random";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?categories=111&sorting=random`)
+      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=random`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -356,7 +356,7 @@ export default {
       this.sortValue = "date_added";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?categories=111&sorting=date_added`)
+      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=date_added`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -403,7 +403,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
@@ -417,7 +417,7 @@ export default {
       this.start = "";
       this.filteredSearch = "";
       fetch(
-        `https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+        `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
       )
         .then((res) => res.json())
         .then((json) => {
