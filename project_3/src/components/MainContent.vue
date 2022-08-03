@@ -476,6 +476,52 @@ export default {
 </script>
 
 <style scoped>
+.img::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.img:hover::before {
+  -webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
 .images-block {
   position: relative;
   display: grid;
@@ -492,6 +538,7 @@ export default {
   padding: 10px;
   background-color: #212121;
   width: 600px;
+  border-radius: 8px;
 }
 .search-wrapper {
   padding-top: 100px;
@@ -701,6 +748,7 @@ export default {
   padding: 15px;
   background-color: #212121;
   width: 800px;
+  border-radius: 8px;
 }
 .start-search-wrapper {
   z-index: 1;
@@ -942,4 +990,5 @@ export default {
     object-fit: contain;
   }
 }
+
 </style>
