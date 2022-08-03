@@ -387,7 +387,7 @@ export default {
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `https://thingproxy.freeboard.io/fetch/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+          `/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
