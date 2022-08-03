@@ -53,21 +53,13 @@ export default {
 .resolution-dropdown {
   background-color: #212121;
 }
-.search {
-  
-}
-.tag {
-}
+
 .img {
   display: inline-block;
   max-width: 320px;
   height: 220px;
   background-color: black;
-   
- 
-  
 }
-
 
 .active {
   color: green;
@@ -76,27 +68,26 @@ a {
   text-decoration: none;
 }
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
 }
 .modal-container {
-        width: 1100px;
-        height: 100%;
-        padding-left: 50px;
-        padding-bottom: 25px;
-        padding-top:25px;
-        padding-right: 50px;
-        background-color:#212121;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
+  width: 1100px;
+  height: 100%;
+  padding-left: 50px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  padding-right: 50px;
+  background-color: #212121;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .modal-img {
   position: relative;
@@ -133,6 +124,4 @@ a {
   padding-bottom: 150px;
   background-color: #212121;
 }
-
-
 </style>

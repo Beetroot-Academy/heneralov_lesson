@@ -19,11 +19,7 @@
 .resolution-dropdown {
   background-color: #212121;
 }
-.search {
-  
-}
-.tag {
-}
+
 .img {
   display: inline-block;
   max-width: 300px;
