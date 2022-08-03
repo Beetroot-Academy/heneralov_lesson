@@ -387,7 +387,7 @@ export default {
         this.page = 1;
         this.filteredSearch = "";
         fetch(
-          `https://cors-anywhere.herokuapp.com/https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
+          `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?q=${this.queryValue}&categories=${this.categories}&resolutions=${this.exactResValue}&sorting=${this.sortValue}&topRange=${this.topSortValue}&order=${this.orderValue}&page=${this.page}`
         )
           .then((res) => res.json())
           .then((json) => {
