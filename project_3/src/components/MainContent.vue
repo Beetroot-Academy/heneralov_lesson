@@ -319,8 +319,10 @@ export default {
       this.isLoading = true;
       this.filteredSearch = "";
       this.sort = "toplist";
+      this.sortValue = "toplist";
+      this.categories = "111";
       this.page = 1;
-      fetch(`http://localhost:8080/api/v1/search?sorting=toplist`)
+      fetch(`http://localhost:8080/api/v1/search?categories=111&sorting=toplist`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -334,8 +336,10 @@ export default {
       this.filteredSearch = "";
       this.isLoading = true;
       this.sort = "random";
+      this.sortValue = "random";
+      this.categories = "111";
       this.page = 1;
-      fetch(`http://localhost:8080/api/v1/search?sorting=random`)
+      fetch(`http://localhost:8080/api/v1/search?categories=111&sorting=random`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -349,8 +353,10 @@ export default {
       this.isLoading = true;
       this.filteredSearch = "";
       this.sort = "date_added";
+      this.sortValue = "date_added";
+      this.categories = "111";
       this.page = 1;
-      fetch(`http://localhost:8080/api/v1/search?sorting=date_added`)
+      fetch(`http://localhost:8080/api/v1/search?categories=111&sorting=date_added`)
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
