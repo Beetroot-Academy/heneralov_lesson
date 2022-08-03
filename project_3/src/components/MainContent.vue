@@ -150,15 +150,25 @@
       <div class="start-nav-wrapper">
         <nav class="start-nav">
           <ul class="start-list">
-            <li class="start-item"><router-link class="start-link" :to="{path:'/'}">Home</router-link></li>
             <li class="start-item">
-              <router-link class="start-link" :to="{path:'/about'}">About</router-link>
+              <router-link class="start-link" :to="{ path: '/' }"
+                >Home</router-link
+              >
             </li>
             <li class="start-item">
-              <router-link class="start-link" :to="{path:'/faq'}">FAQ</router-link>
+              <router-link class="start-link" :to="{ path: '/about' }"
+                >About</router-link
+              >
             </li>
             <li class="start-item">
-              <router-link class="start-link" :to="{path:'/contact'}">Contact</router-link>
+              <router-link class="start-link" :to="{ path: '/faq' }"
+                >FAQ</router-link
+              >
+            </li>
+            <li class="start-item">
+              <router-link class="start-link" :to="{ path: '/contact' }"
+                >Contact</router-link
+              >
             </li>
           </ul>
           <div class="burger-wrapper">
@@ -168,16 +178,24 @@
               <span class="bar"></span>
               <ul v-if="openStartNav" class="start-burger">
                 <li class="start-burger-item">
-                  <router-link class="start-link" :to="{path:'/'}">Home</router-link>
+                  <router-link class="start-link" :to="{ path: '/' }"
+                    >Home</router-link
+                  >
                 </li>
                 <li class="start-burger-item">
-                  <router-link class="start-link" :to="{path:'/about'}">About</router-link>
+                  <router-link class="start-link" :to="{ path: '/about' }"
+                    >About</router-link
+                  >
                 </li>
                 <li class="start-burger-item">
-                  <router-link class="start-link" :to="{path:'/faq'}">FAQ</router-link>
+                  <router-link class="start-link" :to="{ path: '/faq' }"
+                    >FAQ</router-link
+                  >
                 </li>
                 <li class="start-burger-item">
-                  <router-link class="start-link" :to="{path:'/contact'}">Contact</router-link>
+                  <router-link class="start-link" :to="{ path: '/contact' }"
+                    >Contact</router-link
+                  >
                 </li>
               </ul>
             </div>
@@ -289,6 +307,13 @@ export default {
       filteredSearch: [],
       arrowIcon: false,
       search: "https://wallhaven.cc/api/v1/search",
+      icons: [
+        "mdi-facebook",
+        "mdi-twitter",
+        "mdi-reddit",
+        "mdi-instagram",
+        "mdi-linkedin",
+      ],
     };
   },
 
@@ -322,7 +347,9 @@ export default {
       this.sortValue = "toplist";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=toplist`)
+      fetch(
+        `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=toplist`
+      )
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -339,7 +366,9 @@ export default {
       this.sortValue = "random";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=random`)
+      fetch(
+        `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=random`
+      )
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -356,7 +385,9 @@ export default {
       this.sortValue = "date_added";
       this.categories = "111";
       this.page = 1;
-      fetch(`https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=date_added`)
+      fetch(
+        `https://api.codetabs.com/v1/proxy?quest=https://wallhaven.cc/api/v1/search?categories=111&sorting=date_added`
+      )
         .then((res) => res.json())
         .then((json) => {
           this.filteredSearch = json.data;
@@ -391,7 +422,7 @@ export default {
         )
           .then((res) => res.json())
           .then((json) => {
-            this.filteredSearch = json.data
+            this.filteredSearch = json.data;
           })
           .finally(() => (this.isLoading = false));
       }
@@ -486,8 +517,7 @@ export default {
 .categories-checkbox {
   display: none;
 }
-.categories-checkbox + label {
-}
+
 .categories-checkbox:checked + label {
   background-color: #00c853;
   transition: 0.3s;

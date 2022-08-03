@@ -1,52 +1,57 @@
 <template>
   <div class="contact-section">
-    <HeaderBar/>
+    <HeaderBar />
     <div class="contact-wrapper">
-    <div class="contact-content">
-      <h2 class="contact-title">Contact Us!</h2>
-      <form class="form">
-        <div class="first-flex">
-        <input
-          type="text"
-          name="name"
-          placeholder="First name..."
-          required
-          class="form__nameinput"
-        />
-        <input
-          type="text"
-          name="name"
-          placeholder="Last name..."
-          required
-          class="form__nameinput"
-        />
-        </div>
-        <div class="second-flex">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email..."
-          required
-          class="form__mailinput"
-        />
-        <input
-          type="tel"
-          name="tel"
-          id="tel"
-          placeholder="Phone number..."
-          required
-          class="form__phoneinput"
-        />
-        </div>
-        <div class="message-textarea">
-        <textarea class="form__message" name="message" id="message" placeholder="Your message..."></textarea>
-        </div>
-        <button class="form__btn" type="submit">Submit</button>
-      </form>
+      <div class="contact-content">
+        <h2 class="contact-title">Contact Us!</h2>
+        <form class="form">
+          <div class="first-flex">
+            <input
+              type="text"
+              name="name"
+              placeholder="First name..."
+              required
+              class="form__nameinput"
+            />
+            <input
+              type="text"
+              name="name"
+              placeholder="Last name..."
+              required
+              class="form__nameinput"
+            />
+          </div>
+          <div class="second-flex">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email..."
+              required
+              class="form__mailinput"
+            />
+            <input
+              type="tel"
+              name="tel"
+              id="tel"
+              placeholder="Phone number..."
+              required
+              class="form__phoneinput"
+            />
+          </div>
+          <div class="message-textarea">
+            <textarea
+              class="form__message"
+              name="message"
+              id="message"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+          <button class="form__btn" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <FooterBlock :icons="icons" />
+    <FooterBlock :icons="icons" />
   </div>
 </template>
 
@@ -64,11 +69,9 @@ export default {
         "mdi-instagram",
         "mdi-linkedin",
       ],
-    }
+    };
   },
-  props: {
-    
-  },
+  props: {},
   components: {
     FooterBlock,
     HeaderBar,
@@ -77,14 +80,13 @@ export default {
 </script>
 
 <style scoped>
-
 .contact-content {
   width: 700px;
   margin: 0 auto;
   background-color: white;
   color: #212121;
   padding: 0px 50px;
-  padding-top:50px ;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 .contact-title {
@@ -95,7 +97,7 @@ export default {
   padding-bottom: 150px;
 }
 .first-flex {
-  padding-top:50px;
+  padding-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -113,7 +115,7 @@ export default {
   justify-content: space-around;
 }
 .form__nameinput {
-  border-bottom: 1px solid #C5CAE9;
+  border-bottom: 1px solid #c5cae9;
   padding: 10px;
   opacity: 0.5;
   width: 250px;
@@ -123,14 +125,14 @@ export default {
   transition: 0.5s;
 }
 .form__mailinput {
-  border-bottom: 1px solid #C5CAE9;
+  border-bottom: 1px solid #c5cae9;
   padding: 10px;
   opacity: 0.5;
   width: 250px;
 }
 .form__phoneinput {
   width: 250px;
-  border-bottom: 1px solid #C5CAE9;
+  border-bottom: 1px solid #c5cae9;
   padding: 10px;
   opacity: 0.5;
 }
@@ -147,10 +149,10 @@ export default {
   margin: 0 auto;
   border: 1px solid #212121;
   padding: 15px 45px;
-  background-color: #C5CAE9;
+  background-color: #c5cae9;
 }
 .form__btn:hover {
-  background-color: #5C6BC0;
+  background-color: #5c6bc0;
   transition: 0.5s;
 }
 .message-textarea {
@@ -158,7 +160,7 @@ export default {
 }
 .form__message {
   width: 100%;
-  border: 1px solid #C5CAE9 ;
+  border: 1px solid #c5cae9;
   padding: 5px 15px;
   opacity: 0.5;
 }
@@ -167,43 +169,42 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .contact-content {
-  width: 400px;
-  margin: 0 auto;
-  background-color: white;
-  color: #212121;
-  padding: 0px 30px;
-  padding-top:30px ;
-  padding-bottom: 30px;
-}
-.form__nameinput {
-  width: 140px;
-}
-.form__phoneinput {
-  width: 140px;
-}
-.form__mailinput {
-  width: 140px;
-}
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    color: #212121;
+    padding: 0px 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form__nameinput {
+    width: 140px;
+  }
+  .form__phoneinput {
+    width: 140px;
+  }
+  .form__mailinput {
+    width: 140px;
+  }
 }
 @media screen and (max-width: 320px) {
   .contact-content {
-  width: 280px;
-  margin: 0 auto;
-  background-color: white;
-  color: #212121;
-  padding: 0px 10px;
-  padding-top:20px ;
-  padding-bottom: 20px;
+    width: 280px;
+    margin: 0 auto;
+    background-color: white;
+    color: #212121;
+    padding: 0px 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .form__nameinput {
+    width: 100px;
+  }
+  .form__phoneinput {
+    width: 100px;
+  }
+  .form__mailinput {
+    width: 100px;
+  }
 }
-.form__nameinput {
-  width: 100px;
-}
-.form__phoneinput {
-  width: 100px;
-}
-.form__mailinput {
-  width: 100px;
-}
-}
-
 </style>
