@@ -52,7 +52,7 @@
               placeholder="Your message..."
             ></textarea>
           </div>
-          <button @submit="onSubmit" class="form__btn" type="submit">Submit</button>
+          <button class="form__btn" type="submit">Submit</button>
         </form>
       </div>
     </div>
