@@ -9,6 +9,7 @@
             <input
               type="text"
               name="name"
+              v-model="firstname"
               placeholder="First name..."
               required
               class="form__nameinput"
@@ -16,6 +17,7 @@
             <input
               type="text"
               name="name"
+              v-model="lastname"
               placeholder="Last name..."
               required
               class="form__nameinput"
@@ -25,6 +27,7 @@
             <input
               type="email"
               name="email"
+              v-model="email"
               id="email"
               placeholder="Email..."
               required
@@ -33,6 +36,7 @@
             <input
               type="tel"
               name="tel"
+              v-model="phone"
               id="tel"
               placeholder="Phone number..."
               required
@@ -42,12 +46,13 @@
           <div class="message-textarea">
             <textarea
               class="form__message"
+              v-model="message"
               name="message"
               id="message"
               placeholder="Your message..."
             ></textarea>
           </div>
-          <button class="form__btn" type="submit">Submit</button>
+          <button @submit="onSubmit" class="form__btn" type="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -69,6 +74,11 @@ export default {
         "mdi-instagram",
         "mdi-linkedin",
       ],
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      message: "",
     };
   },
   props: {},
@@ -76,6 +86,9 @@ export default {
     FooterBlock,
     HeaderBar,
   },
+  methods: {
+    
+  }
 };
 </script>
 
