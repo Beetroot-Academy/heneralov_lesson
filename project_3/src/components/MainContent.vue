@@ -704,6 +704,8 @@ export default {
   z-index: 1;
   right: 0px;
   top: 40px;
+  background-color: #424242;
+  padding-right: 20px;
 }
 .start-burger-item {
   padding-bottom: 20px;
